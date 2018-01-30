@@ -16,7 +16,6 @@ class NewVisitorTest(StaticLiveServerTestCase):
         self.browser.quit()
 
 
-
     def test_layout_and_styling(self):
         # Edith goes to the home page
         self.browser.get(self.live_server_url)
@@ -29,6 +28,23 @@ class NewVisitorTest(StaticLiveServerTestCase):
             80,
             delta=10
         )
+
+    def test_can_i_click_post(self):
+        # Edith goes to the home page
+        self.browser.get(self.live_server_url)
+
+        # She notices the a post and clicks)
+        # import pdb; pdb.set_trace()
+        post = self.browser.find_element_by_class_name('cs-post-meta')
+        post = post.find_element_by_tag_name('a')
+        url = post.get_property('href')
+        url.assertIn('post_detail')
+        post.click()
+        self.wait_for(lambda: self.assertEqual(
+            self.browser.find_element_by_css_selector('.comment-notes').text,
+            "Your email address will not be published."
+        ))
+
 
     def test_can_i_log_in(self):
         # Eke has heard about a cool new Magazine. He goes
