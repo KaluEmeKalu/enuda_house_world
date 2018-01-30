@@ -1,0 +1,355 @@
+/*------------------------------------------------------------------
+
+@Author: CodeoStudio
+@URL:    http://codeostudio.hr/
+
+[Table of contents]
+1. Columns
+2. Alert boxes
+3. Buttons
+4. Tooltips
+5. Dividers
+6. Dropcaps
+7. Tabs
+8. Accordions
+9. Responsive styles
+
+-------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+    1. Columns
+-------------------------------------------------------------------*/
+.cs-row {
+    position: relative;
+    margin-left: -15px;
+    margin-right: -15px
+}
+[class *= "cs-col"] {
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 100%
+}
+.cs-col-1 {
+    width: 8.33333333%
+}
+.cs-col-2 {
+    width: 16.66666667%
+}
+.cs-col-3 {
+    width: 25%
+}
+.cs-col-4 {
+    width: 33.33333333%
+}
+.cs-col-5 {
+    width: 41.66666667%
+}
+.cs-col-6 {
+    width: 50%
+}
+.cs-col-7 {
+    width: 58.33333333%
+}
+.cs-col-8 {
+    width: 66.66666667%
+}
+.cs-col-9 {
+    width: 75%
+}
+.cs-col-10 {
+    width: 83.33333333%
+}
+.cs-col-11 {
+    width: 91.66666667%
+}
+.cs-col-12 {
+    width: 100%
+}
+
+/*------------------------------------------------------------------
+    2. Alert boxes
+-------------------------------------------------------------------*/
+.cs-alert {
+    position: relative;
+    padding: 20px 30px;
+    margin-bottom: 20px
+}
+.cs-alert p {
+    overflow: hidden;
+    margin: 2px 0 0 35px
+}
+.cs-alert i {
+    position: absolute;
+    left: 20px;
+    top: 25px;
+    font-size: 20px;
+    line-height: 20px;
+    display: block;
+    width: 30px;
+    text-align: center;
+}
+.cs-alert.cs-alert-green {
+    background-color: #EBF6E0
+}
+.cs-alert.cs-alert-green i {
+    color: #5f9025
+}
+.cs-alert.cs-alert-blue {
+    background-color: #E9F7FE;
+}
+.cs-alert.cs-alert-blue i {
+    color: #5091b2
+}
+.cs-alert.cs-alert-red {
+    background-color: #ffe9e9
+}
+.cs-alert.cs-alert-red i {
+    color: #de5959
+}
+.cs-alert.cs-alert-yellow {
+    background-color: #FBFADD;
+}
+.cs-alert.cs-alert-yellow i {
+    color: #8f872e
+}
+
+/*------------------------------------------------------------------
+    3. Buttons
+-------------------------------------------------------------------*/
+.cs-btn {
+    cursor: pointer;
+    padding: 8px 12px;
+    display: inline-block;
+    margin: 0 5px 10px 0;
+    font-weight: normal;
+    outline: none;
+    position: relative;
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    min-width: 80px;
+    line-height: 22px;
+    text-align: center;
+    opacity: 0.9
+}
+.cs-btn:hover {
+    opacity: 1;
+    color: #fff
+}
+.cs-btn:active {
+    top: 1px
+}
+.cs-btn.cs-btn-small {
+    padding: 6px 8px;
+    font-size: 12px;
+    line-height: 20px;
+    min-width: 60px
+}
+.cs-btn.cs-btn-large {
+    padding: 10px 16px;
+    font-size: 16px;
+    line-height: 24px;
+    min-width: 120px
+}
+.cs-btn.cs-btn-black {
+    background-color: #222
+}
+.cs-btn.cs-btn-red {
+    background-color: #683c17
+}
+.cs-btn.cs-btn-green {
+    background-color: #71a866
+}
+.cs-btn.cs-btn-tirquese {
+    background-color: #7fccbc
+}
+.cs-btn.cs-btn-blue {
+    background-color: #508fd1
+}
+.cs-btn.cs-btn-pink {
+    background-color: #9d5fac
+}
+.cs-btn.cs-btn-orange {
+    background-color: #c47839
+} 
+.cs-btn.cs-btn-grey {
+    background-color: #bbb
+}
+
+/*------------------------------------------------------------------
+    4. Tooltips
+-------------------------------------------------------------------*/
+.cs-tooltip {
+    position: relative;
+    border-bottom: 1px solid
+}
+.cs-tooltip:after {
+    font-size: 12px;
+    line-height: 1;
+    padding: 6px 8px;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: all 0.15s linear;
+    -moz-transition: all 0.15s linear;
+    -o-transition: all 0.15s linear;
+    transition: all 0.15s linear;
+    white-space: nowrap;
+    content: attr(data-tooltip);
+    position: absolute;
+    top: 0;
+    left: 50%;
+    -webkit-transform: translate(-50%, -30px);
+    -moz-transform: translate(-50%, -30px);
+    -ms-transform: translate(-50%, -30px);
+    -o-transform: translate(-50%, -30px);
+    transform: translate(-50%, -30px);
+    width: auto;
+    height: auto;
+    background-color: #000;
+    color: #fff;
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+    border-radius: 1px;
+}
+.cs-tooltip:hover:after {
+    visibility: visible;
+    opacity: 1
+}
+
+/*------------------------------------------------------------------
+    5. Dividers
+-------------------------------------------------------------------*/
+hr.cs-divider-solid {
+    border-top: 5px solid #ddd;
+}
+hr.cs-divider-dashed {
+    border-top: 2px dashed #ddd;
+}
+hr.cs-divider-dotted {
+    border-top: 2px dotted #ddd;
+}
+hr.cs-divider-double {
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    height: 6px
+}
+hr.cs-divider-blank {
+    border: 0;
+}
+hr.cs-divider-large-margin {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+/*------------------------------------------------------------------
+    6. Dropcaps
+-------------------------------------------------------------------*/
+.cs-dropcap:first-letter {
+    font-size: 400%;
+    font-weight: 700;
+    line-height: 100%;
+    margin: 0 15px 0 0;
+}
+
+/*------------------------------------------------------------------
+    7. Tabs
+-------------------------------------------------------------------*/
+.ui-tabs {
+    border: 1px solid #ddd;
+    margin-bottom: 20px
+}
+.ui-tabs .ui-tabs-nav {
+    display: table;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.ui-tabs .ui-tabs-nav .ui-tabs-tab {
+    display: table-cell;
+}
+.ui-tabs .ui-tabs-nav .ui-tabs-tab a {
+    display: block;
+    padding: 15px 5px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-width: 0 1px 1px 0;
+    background-color: #f9f9f9;
+    color: #000
+}
+.ui-tabs .ui-tabs-nav .ui-tabs-tab:last-child a {
+    border-right: 0;
+}
+.ui-tabs .ui-tabs-nav .ui-tabs-tab.ui-tabs-active a {
+    border-bottom-color: transparent;
+    background-color: #fff;
+    color: #000
+}
+.ui-tabs .ui-tabs-panel {
+    padding: 35px;
+}
+.ui-tabs .ui-tabs-panel p:last-child {
+    margin-bottom: 0
+}
+
+/*------------------------------------------------------------------
+    8. Accordions
+-------------------------------------------------------------------*/
+.ui-accordion {
+    margin-bottom: 20px;
+}
+.ui-accordion .ui-accordion-header {
+    display: block;
+    padding: 15px 20px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    outline: 0;
+    cursor: pointer;
+    position: relative;
+    margin-bottom: 10px;
+}
+.ui-accordion .ui-accordion-header:after {
+    font-family: 'FontAwesome';
+    content: "\f107";
+    font-size: 14px;
+    position: absolute;
+    right: 20px;
+    top: 0;
+    padding: 15px 0;
+    color: #000;
+}
+.ui-accordion .ui-accordion-header:last-child {
+    margin-bottom: 0
+}
+.ui-accordion .ui-accordion-header.ui-accordion-header-active:after {
+    content: "\f106";
+}
+.ui-accordion .ui-accordion-header.ui-accordion-header-collapsed {}
+.ui-accordion .ui-accordion-header.ui-accordion-header-active {
+    background-color: #fff
+}
+.ui-accordion .ui-accordion-content {
+    padding: 20px 0 30px 0
+}
+.ui-accordion .ui-accordion-content p:last-child {
+    margin-bottom: 0
+}
+.ui-accordion .ui-accordion-content.ui-accordion-content-active {}
+
+/*------------------------------------------------------------------
+    9. Responsive styles
+-------------------------------------------------------------------*/
+@media screen and (max-width: 580px) {
+    .ui-tabs .ui-tabs-nav,
+    .ui-tabs .ui-tabs-nav .ui-tabs-tab {
+        display: block;
+    }
+    .ui-tabs .ui-tabs-nav .ui-tabs-tab a {
+        border-width: 0 0 1px 0
+    }
+    .ui-tabs .ui-tabs-nav .ui-tabs-tab.ui-tabs-active a {
+        border-bottom-color: #ddd
+    }
+}

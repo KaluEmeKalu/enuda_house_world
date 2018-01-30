@@ -1,0 +1,40 @@
+/*------------------------------------------------------------------
+
+@Author: CodeoStudio
+@URL:    http://codeostudio.hr/
+
+[Table of contents]
+1. Import from Google
+2. Roboto
+3. Popins
+
+-------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+    1. Import from Google
+-------------------------------------------------------------------*/
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700');
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,700');
+
+/*------------------------------------------------------------------
+    2. Roboto
+-------------------------------------------------------------------*/
+body {
+	font-family: 'Roboto', sans-serif;
+	font-size: 15px;
+    line-height: 25px
+}
+
+/*------------------------------------------------------------------
+    3. Popins
+-------------------------------------------------------------------*/
+#cs-primary-nav,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: 'Poppins', sans-serif;
+	letter-spacing: -1px;
+}

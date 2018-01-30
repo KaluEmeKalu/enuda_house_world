@@ -1,0 +1,3779 @@
+/*------------------------------------------------------------------
+
+@Author: CodeoStudio
+@URL:    http://codeostudio.hr/
+
+[Table of contents]
+I. Kalu Edited Code
+1. Body
+2. Typography
+3. Forms
+4. Wordpress aligns
+5. Page wrapper
+6. Section wrapper
+7. Sidebar
+    7.1 Widget - product tags
+    7.2 Widget - shop list global
+    7.3 Widget - shoping cart
+    7.4 Widget - filter price
+    7.5 Widget - search
+    7.6 Widget - recent entries
+    7.7 Widget - calendar
+    7.8 Widget - tags
+    7.9 Widget - social profiles
+    7.10 Widget - banner 300x250
+    7.11 Widget - email subscribe
+    7.12 Posts lists
+8. Wallpaper Ad
+9. Header
+    9.1 Header light
+    9.2 Header dark
+    9.3 Header image
+    9.4 Header colored
+10. Logo
+11. Header banner
+12. Primary menu
+    12.1 Primary menu light
+    12.2 Primary menu dark
+    12.3 Primary menu colored
+    12.4 Toggle mobile search
+    12.5 Toggle menu nav
+    12.6 Custom links
+    12.7 Search popup
+13. Off-canvas wrap
+    13.1 Off-canvas nav
+    13.2 Off-canvas cart
+14. Sliders
+    14.1 Carousel slider
+    14.2 Big slider
+    14.3 Divit slider
+15. Post layout
+    15.1 Post
+    15.2 Section title
+    15.3 Page title
+    15.4 Blog list
+    15.5 Blog classic
+    15.6 Blog two columns
+    15.7 Blog three columns
+    15.8 Blog mixed
+    15.9 Blog latest videos
+    15.10 Pagination
+16. Post single
+17. Pages
+    17.1 404 Page
+    17.2 Contact form
+18. Shop (WooCommerce based)
+    18.1 Shop category
+    18.2 Shop single
+19. Footer
+20. Responsive styles
+
+-------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+    I. Kalu Edited Code
+-------------------------------------------------------------------*/
+#cs-site-logo img {
+    max-width: 40px;
+}
+
+/*------------------------------------------------------------------
+    1. Body
+-------------------------------------------------------------------*/
+body {
+    margin: 0;
+    padding: 0;
+    color: #000
+}
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box
+}
+.cs-container:before,
+.cs-container:after,
+.cs-clearfix:before,
+.cs-clearfix:after,
+.cs-row:before,
+.cs-row:after {
+    content: " ";
+    display: table
+}
+.cs-container:after,
+.cs-clearfix:after,
+.cs-row:after {
+    clear: both
+}
+
+/*------------------------------------------------------------------
+    2. Typography
+-------------------------------------------------------------------*/
+a {
+    text-decoration: none;
+    outline: 0;
+    background-color: transparent;
+    -webkit-transition: 0.2s;
+    -moz-transition: 0.2s;
+    -o-transition: 0.2s;
+    transition: 0.2s
+}
+a:hover {
+    outline: 0;
+    border: 0;
+    text-decoration: none;
+    color: #000
+}
+a:focus,
+a:active {
+    outline: 0;
+    border: 0;
+    text-decoration: none
+}
+img {
+    vertical-align: middle;
+    max-width: 100%;
+    height: auto;
+    text-decoration: none;
+    outline: 0;
+    border: 0
+}
+a img {
+    text-decoration: none;
+    outline: 0;
+    border: 0
+}
+iframe,
+object,
+video,
+audio {
+    max-width: 100%
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #000;
+    font-weight: 700;
+    margin: 0 0 20px 0
+}
+h1 {
+    font-size: 34px;
+    line-height: 42px
+}
+h2 {
+    font-size: 28px;
+    line-height: 36px
+}
+h3 {
+    font-size: 24px;
+    line-height: 32px
+}
+h4 {
+    font-size: 20px;
+    line-height: 28px;
+    margin-bottom: 10px
+}
+h5 {
+    font-size: 18px;
+    line-height: 26px;
+    margin-bottom: 10px
+}
+h6 {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 10px
+}
+p {
+    margin: 0 0 20px 0
+}
+hr {
+    clear: both;
+    display: block;
+    overflow: hidden;
+    border: 0;
+    height: 0;
+    margin-bottom: 20px;
+    border-top: 1px solid #ddd;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box
+}
+code,
+kbd,
+pre,
+samp {
+    font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+pre {
+    display: block;
+    overflow: hidden;
+    padding: 20px 25px;
+    margin: 0 0 20px 0;
+    font-size: 14px;
+    line-height: 22px;
+    word-break: break-all;
+    word-wrap: break-word;
+    background-color: #fff;
+    border-width: 1px;
+    border-style: solid;
+    border-left-width: 8px;
+    border-left-style: solid;
+    background: linear-gradient(to bottom, #fff, #fff 50%, #f9f9f9 50%, #f9f9f9);
+    background-size: 100% 44px
+}
+mark,
+ins {
+    padding: 2px 4px;
+    color: #fff;
+    text-decoration: none;
+}
+ins {
+	background-color: #000
+}
+code {
+    padding: 2px 4px;
+    font-size: 12px;
+    background-color: #ddd;
+}
+ol,
+ul {
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-left: 20px
+}
+ul {
+    list-style: disc
+}
+ol {
+    list-style: decimal
+}
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+    margin-bottom: 0
+}
+dl {
+    margin-top: 0;
+    margin-bottom: 20px
+}
+dt {
+    font-weight: 700
+}
+dd {
+    margin-left: 10px
+}
+address {
+    margin-bottom: 20px
+}
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+    width: 100%;
+    max-width: 100%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+table thead {
+    background-color: #f9f9f9;
+    color: #000
+}
+table tr:nth-child(even) {
+    background-color: #f9f9f9
+}
+th,
+td {
+    text-align: left;
+    padding: 8px;
+    vertical-align: top;
+    border: 1px solid #ddd
+}
+blockquote {
+	margin: 0 0 20px 0;
+	padding: 30px;
+	color: #fff;
+}
+blockquote p:last-child {
+	margin: 0
+}
+blockquote p {
+	font-size: 18px;
+	line-height: 28px;
+	font-style: italic;
+}
+blockquote p cite {
+	font-size: 14px;
+	line-height: 22px;
+	margin-top: 15px;
+	display: block;
+	text-align: left;
+	border-left-style: solid;
+	border-left-width: 4px;
+	padding-left: 8px;
+	color: #fff
+}
+blockquote.alignleft,
+blockquote.alignright {
+    width: 35%;
+}
+blockquote.cs-quotes-simple,
+blockquote.cs-quotes-simple p cite {
+    background: transparent;
+    color: #000
+}
+blockquote.cs-quotes-simple p {
+    font-size: 22px;
+    line-height: 34px;
+    font-style: normal;
+}
+blockquote.cs-quotes-simple:not(.alignleft):not(.alignright) {
+    text-align: center;
+}
+blockquote.cs-quotes-simple:not(.alignleft):not(.alignright) p cite {
+    text-align: center;
+    display: block;
+    border: 0;
+    padding-left: 0
+}
+
+/*------------------------------------------------------------------
+    3. Forms
+-------------------------------------------------------------------*/
+textarea,
+select,
+input:not([type="checkbox"]):not([type="radio"]) {
+	padding: 10px 15px;
+    outline: none;
+    font-size: 12px;
+    line-height: 20px;
+    margin: 0;
+    max-width: 100%;
+    display: block;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    font-weight: 400;
+    -webkit-transition: 0.2s;
+    -moz-transition: 0.2s;
+    -o-transition: 0.2s;
+    transition: 0.2s;
+}
+textarea:focus,
+select:focus,
+input:not([type="checkbox"]):not([type="radio"]):focus {
+	border: 1px solid #bbb;
+	background-color: #f9f9f9
+}
+select {
+	padding: 12px 15px
+}
+textarea {
+	width: 100%;
+	min-height: 180px
+}
+label {
+	display: block;
+    margin-bottom: 5px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    position: relative;
+    color: #000
+}
+label input[type="checkbox"],
+label input[type="radio"] {
+    float: left;
+    margin-top: 4px;
+    margin-right: 8px
+}
+
+/*------------------------------------------------------------------
+    4. Wordpress aligns
+-------------------------------------------------------------------*/
+.text_left {
+    text-align: left
+}
+.text_right {
+    text-align: right
+}
+.text_center {
+    text-align: center
+}
+.text_justify {
+    text-align: justify
+}
+.alignleft,
+img.alignleft {
+    float: left;
+    margin: 10px 50px 25px 0
+}
+.alignright,
+img.alignright {
+    float: right;
+    margin: 10px 0 25px 50px
+}
+.aligncenter,
+img.aligncenter {
+    clear: both;
+    display: block;
+    margin: 40px auto
+}
+.wp-caption {
+    text-align: center;
+    max-width: 100%
+}
+.wp-caption img {
+    max-width: 100%
+}
+.wp-caption-text {
+    color: #666;
+    font-style: italic;
+    padding-top: 5px;
+    font-size: 14px;
+    line-height: 20px
+}
+
+
+/*------------------------------------------------------------------
+    5. Page wrapper
+-------------------------------------------------------------------*/
+.cs-container {
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 30px;
+    padding-right: 30px;
+    max-width: 1200px
+}
+#cs-page-wrapper {
+    position: relative;
+	margin: 0 auto;
+	background-color: #fff;
+	height: 100%;
+	width: 100%;
+	-webkit-box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.2);
+	box-shadow: 0px 1px 10px 0px rgba(0,0,0,0.2);
+}
+body.cs-layout-boxed #cs-page-wrapper {
+	max-width: 1200px;
+}
+body.cs-layout-wide #cs-page-wrapper {
+	width: 100%
+}
+body.cs-layout-framed #cs-page-wrapper {
+	max-width: 1200px;
+	margin-top: 30px;
+	margin-bottom: 30px
+}
+
+/*------------------------------------------------------------------
+    6. Section wrapper
+-------------------------------------------------------------------*/
+.cs-section-wrapper {
+    width: 100%;
+    background-color: #fff;
+}
+.cs-section-wrapper:before,
+.cs-section-wrapper:after {
+    content: " ";
+    display: table
+}
+.cs-section-wrapper:after {
+    clear: both
+}
+.cs-section-wrapper.with-padding {
+    padding: 50px 0
+}
+.cs-section-wrapper.with-background {
+    background-color: #eee
+}
+.cs-main-content {
+    width: 100%;
+}
+.cs-main-content:before,
+.cs-main-content:after {
+    content: " ";
+    display: table
+}
+.cs-main-content:after {
+    clear: both
+}
+.cs-main-content.cs-sidebar-on-the-right {
+    float: left;
+    width: 73.5%;
+    padding-right: 4.5%;
+}
+.cs-main-content.cs-sidebar-on-the-left {
+    float: right;
+    width: 73.5%;
+    padding-left: 4.5%
+}
+
+/*------------------------------------------------------------------
+    7. Sidebar
+-------------------------------------------------------------------*/
+.cs-main-sidebar {
+    float: left;
+    width: 26.5%;
+}
+.widget {
+    margin-bottom: 50px;
+}
+.cs-main-sidebar .widget:last-child {
+    margin-bottom: 0
+}
+.widget input[type="search"],
+.widget select {
+    width: 100%
+}
+.widget-title {
+    margin-bottom: 25px;
+    position: relative;
+}
+.widget-title h4 {
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 700;
+    color: #000;
+    padding-bottom: 10px
+}
+.widget-title h4:after {
+    position: absolute;
+    content: " ";
+    display: block;
+    width: 25px;
+    height: 2px;
+    bottom: 0;
+    left: 0
+}
+
+/* Global */
+.widget_archive ul,
+.widget_categories ul,
+.widget_meta ul,
+.widget_recent_comments ul,
+.widget_nav_menu ul,
+.widget_links ul,
+.widget_pages ul,
+.widget_recent_entries ul,
+.widget_rss ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    line-height: 22px
+}
+.widget_archive ul li,
+.widget_categories ul li,
+.widget_meta ul li,
+.widget_recent_comments ul li,
+.widget_nav_menu ul li,
+.widget_links ul li,
+.widget_pages ul li,
+.widget_recent_entries ul li,
+.widget_rss ul li {
+    border-top: 1px solid #eee;
+    padding: 5px 0
+}
+.widget_archive ul li:first-child,
+.widget_categories ul li:first-child,
+.widget_links ul li:first-child,
+.widget_meta ul li:first-child,
+.widget_nav_menu ul li:first-child,
+.widget_pages ul li:first-child,
+.widget_recent_comments ul li:first-child,
+.widget_recent_entries ul li:first-child,
+.widget_rss ul li:first-child {
+    border-top: 0;
+    padding-top: 0;
+    padding-bottom: 5px
+}
+.widget_archive ul li:last-child,
+.widget_categories ul li:last-child,
+.widget_links ul li:last-child,
+.widget_meta ul li:last-child,
+.widget_nav_menu ul li:last-child,
+.widget_pages ul li:last-child,
+.widget_recent_comments ul li:last-child,
+.widget_recent_entries ul li:last-child,
+.widget_rss ul li:last-child {
+    padding-bottom: 0
+}
+.widget_categories .children,
+.widget_nav_menu .sub-menu,
+.widget_pages .children {
+    border-top: 1px solid #eee;
+    padding-top: 5px;
+    margin: 5px 0 0 15px
+}
+
+
+/*------------------------------------------------------------------
+    7.1 Widget - product tags
+-------------------------------------------------------------------*/
+.widget_product_tag_cloud .tagcloud:before,
+.widget_product_tag_cloud .tagcloud:after {
+    content: " ";
+    display: table
+}
+.widget_product_tag_cloud .tagcloud:after {
+    clear: both
+}
+.widget_product_tag_cloud .tagcloud {
+    text-transform: uppercase;
+}
+.widget_product_tag_cloud .tagcloud a {
+    display: block;
+    float: left;
+    background-color: #fff;
+    font-size: 10px !important;
+    padding: 5px 8px;
+    line-height: 1;
+    color: #000;
+    border: 1px solid #eee;
+    margin-right: 5px;
+    margin-bottom: 5px
+}
+
+/*------------------------------------------------------------------
+    7.2 Widget - shop list global
+-------------------------------------------------------------------*/
+ul.product_list_widget li:before,
+ul.product_list_widget li:after {
+    content: " ";
+    display: table
+}
+ul.product_list_widget li:after {
+    clear: both
+}
+ul.product_list_widget li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee
+}
+ul.product_list_widget li:last-child {
+    border-bottom: 0
+}
+ul.product_list_widget {
+    list-style: none;
+    padding: 0;
+    margin: 0
+}
+ul.product_list_widget li {
+    list-style: none
+}
+ul.product_list_widget li span.amount {
+    color: #000;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 20px
+}
+ul.product_list_widget li del span.amount {
+    color: #999;
+    font-weight: 400;
+    text-decoration: line-through;
+}
+ul.product_list_widget li ins {
+    text-decoration: none;
+    background-color: transparent;
+    padding: 0;
+}
+ul.product_list_widget li ins span.amount {}
+ul.product_list_widget li > a {
+    display: block;
+}
+ul.product_list_widget li a:not(.button) {
+    font-weight: 700
+}
+ul.product_list_widget li img {
+    float: right;
+    width: 40px
+}
+ul.product_list_widget li a.remove {
+    position: absolute;
+    left: 0;
+    top: 10px;
+    opacity: 1;
+    font-weight: 400;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-indent: -9999px;
+}
+ul.product_list_widget li a.remove:before {
+    font: normal normal normal 1em/1 "FontAwesome";
+    color: #e2401c;
+    content: "\f057";
+    display: inline-block;
+    font-size: inherit;
+    -webkit-font-smoothing: antialiased;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    line-height: 1.618;
+    text-indent: 0;
+    text-align: center;
+}
+
+/*------------------------------------------------------------------
+    7.3 Widget - shoping cart
+-------------------------------------------------------------------*/
+.widget_shopping_cart .product_list_widget {
+    list-style: none;
+    padding: 0;
+    margin: 0
+}
+.widget_shopping_cart .product_list_widget li {
+    position: relative;
+    padding: 10px 0;
+    padding-left: 30px;
+    border-bottom: 1px solid #eee
+}
+.widget_shopping_cart .product_list_widget li span.quantity {
+    font-size: 12px;
+    line-height: 18px;
+    color: #444
+}
+.widget_shopping_cart p.total {
+    padding: 15px 0;
+    border-top: 1px solid #eee;
+}
+.widget_shopping_cart p.buttons,
+.widget_shopping_cart p.total {
+    text-align: center;
+    margin: 0
+}
+.widget_shopping_cart .buttons .button {
+    display: block;
+    clear: both;
+    padding: 10px 15px;
+    font-size: 14px;
+    margin: 0;
+    font-weight: 400;
+    line-height: 22px;
+    text-align: center;
+    margin-bottom: 5px;
+    outline: none;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    opacity: 0.9;
+    color: #fff;
+    position: relative;
+    border: 0;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s
+}
+.widget_shopping_cart .buttons .button:hover {
+    opacity: 1
+}
+
+/*------------------------------------------------------------------
+    7.4 Widget - filter price
+-------------------------------------------------------------------*/
+form.filter-price {
+    padding-top: 5px;
+}
+form.filter-price .price_slider_wrapper {
+    margin-bottom: 20px;
+    position: relative;
+    height: 8px;
+    background-color: #eee;
+}
+.price_slider_amount {
+    clear: both;
+    overflow: hidden;
+}
+.price_slider_wrapper .ui-slider-range {
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    display: block;
+    border: 0;
+    background-position: 0 0;
+}
+.price_slider_wrapper .ui-slider-handle {
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    z-index: 1;
+    margin-top: -4px;
+    -webkit-transition: none!important;
+    -moz-transition: none!important;
+    -o-transition: none!important;
+    transition: none!important;
+    width: 16px;
+    top: 0;
+    position: absolute;
+    height: 16px;
+    cursor: pointer;
+    outline: 0;
+    margin-left: -1px;
+}
+.price_slider_wrapper .ui-slider-handle:last-child {
+    margin-left: -15px;
+}
+.price_slider_amount button {
+    float: left;
+}
+.price_slider_amount .price_label {
+    float: right;
+    line-height: 30px
+}
+.price_slider_amount button {
+    display: inline-block;
+    clear: both;
+    padding: 8px 13px;
+    margin: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1;
+    text-align: center;
+    outline: none;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    background-color: #222;
+    color: #fff;
+    position: relative;
+    border: 0;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s
+}
+.price_slider_amount button:hover {
+    background-color: #000
+}
+
+/*------------------------------------------------------------------
+    7.5 Widget - search
+-------------------------------------------------------------------*/
+.widget_search button,
+.widget_product_search input[type="submit"],
+.widget_search input[type="submit"],
+.widget_search form .screen-reader-text,
+.widget_product_search form .screen-reader-text {
+    display: none
+}
+.widget_search input[type="search"] {
+    padding: 15px 20px;
+    width: 100%;
+    display: block;
+}
+.widget_search {
+    background-color: #f9f9f9;
+    padding: 30px
+}
+.cs-section-wrapper.with-background .widget_search {
+    background-color: #fff
+}
+
+/*------------------------------------------------------------------
+    7.6 Widget - recent entries
+-------------------------------------------------------------------*/
+.widget_recent_entries .post-date {
+    display: block;
+    font-size: 10px;
+    text-transform: uppercase;
+}
+
+/*------------------------------------------------------------------
+    7.7 Widget - calendar
+-------------------------------------------------------------------*/
+.widget_calendar caption {
+    margin-bottom: 5px
+}
+.widget_calendar thead {
+    background-color: #f5f5f5
+}
+.widget_calendar th,
+.widget_calendar td {
+    padding: 5px;
+    text-align: center;
+}
+
+/*------------------------------------------------------------------
+    7.8 Widget - tags
+-------------------------------------------------------------------*/
+.widget_tag_cloud .tagcloud:before,
+.widget_tag_cloud .tagcloud:after {
+    content: " ";
+    display: table
+}
+.widget_tag_cloud .tagcloud:after {
+    clear: both
+}
+.widget_tag_cloud .tagcloud {
+    text-transform: uppercase;
+}
+.widget_tag_cloud .tagcloud a {
+    display: block;
+    float: left;
+    background-color: #fff;
+    font-size: 10px !important;
+    padding: 5px 8px;
+    line-height: 1;
+    color: #000;
+    border: 1px solid #eee;
+    margin-right: 5px;
+    margin-bottom: 5px
+}
+
+/*------------------------------------------------------------------
+    7.9 Widget - social profiles
+-------------------------------------------------------------------*/
+.widget_social_profiles {}
+.widget_social_profiles ul {
+    font-size: 14px;
+    list-style: none;
+    padding: 0;
+    margin: 0
+}
+.widget_social_profiles ul li {
+    margin-bottom: 5px
+}
+.widget_social_profiles ul li.facebook a {
+    background-color: #3b5998
+}
+.widget_social_profiles ul li.twitter a {
+    background-color: #55acee
+}
+.widget_social_profiles ul li.google a {
+    background-color: #dd4b39
+}
+.widget_social_profiles ul li.youtube a {
+    background-color: #bb0000
+}
+.widget_social_profiles ul li.linkedin a {
+    background-color: #007bb5
+}
+.widget_social_profiles ul li.instagram a {
+    background-color: #125688
+}
+.widget_social_profiles ul li.pinterest a {
+    background-color: #cb2027
+}
+.widget_social_profiles ul li.flickr a {
+    background-color: #ff0084
+}
+.widget_social_profiles ul li.tumblr a {
+    background-color: #32506d
+}
+.widget_social_profiles ul li.vimeo a {
+    background-color: #aad450
+}
+.widget_social_profiles ul li.behance a {
+    background-color: #1769ff
+}
+.widget_social_profiles ul li.rss a {
+    background-color: #ff6600
+}
+.widget_social_profiles ul li a {
+    color: #fff;
+    display: block;
+    padding: 8px 13px
+}
+.widget_social_profiles ul li a:hover {
+    color: #fff;
+    background-color: #000
+}
+.widget_social_profiles ul li a i {
+    display: inline-block;
+    width: 20px;
+    text-align: center;
+    margin-right: 5px
+}
+
+/*------------------------------------------------------------------
+    7.10 Widget - banner 300x250
+-------------------------------------------------------------------*/
+.widget_banner_300x250 .banner {
+    text-align: center;
+}
+
+/*------------------------------------------------------------------
+    7.11 Widget - email subscribe
+-------------------------------------------------------------------*/
+.widget_email_subscribe {
+    padding: 30px;
+    border: 1px solid #eee;
+    background-color: #fff;
+    text-align: center;
+}
+.widget_email_subscribe h4 {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 26px
+}
+.widget_email_subscribe h5 {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 25px
+}
+.widget_email_subscribe .widget-title {
+    display: none;
+}
+.widget_email_subscribe form {
+    display: block;
+    margin: 20px 0 0 0
+}
+.widget_email_subscribe form input[type="email"] {
+    width: 100%;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.widget_email_subscribe form input[type="submit"] {
+    cursor: pointer;
+    width: 100%;
+    padding: 8px 12px;
+    display: inline-block;
+    margin: 0 5px 10px 0;
+    font-weight: normal;
+    outline: none;
+    border: none;
+    position: relative;
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    min-width: 80px;
+    line-height: 22px;
+    text-align: center;
+    opacity: 0.9
+}
+.widget_email_subscribe form input[type="submit"]:hover {
+    opacity: 1;
+    color: #fff;
+}
+.widget_email_subscribe form input[type="submit"]:focus {
+    border: none;
+}
+
+/*------------------------------------------------------------------
+    7.12 Posts lists
+-------------------------------------------------------------------*/
+.widget_post_list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0
+}
+.widget_post_list ul li {
+    margin-bottom: 20px
+}
+.widget_post_list .cs-post-thumb {
+    width: 80px;
+    float: left;
+    margin-right: 15px;
+    margin-bottom: 0
+}
+.widget_post_list .cs-post-icon {
+    display: none;
+}
+.widget_post_list .cs-post-details {
+    overflow: hidden;
+}
+.widget_post_list .cs-post-title {
+    margin: 0
+}
+.widget_post_list .cs-post-title h3 {
+    font-size: 14px;
+    line-height: 20px;
+}
+
+
+/*------------------------------------------------------------------
+    8. Wallpaper Ad
+-------------------------------------------------------------------*/
+#cs-wallpaper-ad {
+    display: block;
+    background-color: #fff;
+    position: fixed;
+    text-align: center;
+    background-attachment: fixed;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-image: url(../demo/background/wallpaper-ad.jpg);
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+#cs-wallpaper-ad a {
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0
+}
+
+/*------------------------------------------------------------------
+    9. Header
+-------------------------------------------------------------------*/
+#cs-main-header {
+	position: relative;
+    z-index: 99;
+}
+#cs-main-header #cs-header-components .cs-container {
+    display: table;
+    width: 100%
+}
+#cs-main-header .cs-header-inner-sticky {
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.1);
+    -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.1);
+    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.1);
+}
+#cs-main-header.cs-header-layout-2.active,
+#cs-main-header .cs-header-inner-sticky.active {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    right: 0;
+    z-index: 1
+}
+#cs-main-header.cs-header-layout-1.cs-nav-dark .cs-header-inner-sticky {
+    background-color: #000
+}
+#cs-main-header.cs-header-layout-1.cs-nav-light .cs-header-inner-sticky {
+    background-color: #fff
+}
+#cs-main-header.cs-header-layout-1.cs-header-center {
+    text-align: center;
+}
+
+/*------------------------------------------------------------------
+    9.1 Header light
+-------------------------------------------------------------------*/
+#cs-main-header.cs-header-light #cs-header-components {
+    background-color: #fff
+}
+#cs-main-header.cs-header-light #cs-header-components .cs-toggle-mobile-search a {
+    color: #000
+}
+
+/*------------------------------------------------------------------
+    9.2 Header dark
+-------------------------------------------------------------------*/
+#cs-main-header.cs-header-dark #cs-header-components {
+    background-color: #000
+}
+#cs-main-header.cs-header-dark #cs-header-components .cs-toggle-mobile-search a {
+    color: #fff
+}
+
+/*------------------------------------------------------------------
+    9.3 Header image
+-------------------------------------------------------------------*/
+#cs-main-header.cs-header-layout-1.cs-header-image #cs-header-components {
+    background-position: center bottom;
+    background-repeat: repeat-x;
+    background-image: url(../demo/college-header-bg.png)
+}
+#cs-main-header.cs-header-layout-1.cs-header-image #cs-header-components {
+    padding-top: 20px;
+    padding-bottom: 60px
+}
+
+/*------------------------------------------------------------------
+    9.4 Header colored
+-------------------------------------------------------------------*/
+#cs-main-header.cs-header-layout-2.cs-header-colored #cs-header-components {}
+
+/*------------------------------------------------------------------
+    10. Logo
+-------------------------------------------------------------------*/
+#cs-site-logo {
+	padding-top: 30px;
+	padding-bottom: 30px
+}
+#cs-main-header.cs-header-layout-1 #cs-header-components #cs-site-logo {
+    display: table-cell;
+}
+#cs-main-header.cs-header-layout-1.cs-header-center #cs-header-components #cs-site-logo,
+#cs-main-header.cs-header-layout-1.cs-header-center #cs-header-components .cs-header-banner {
+    display: block;
+}
+#cs-main-header.cs-header-layout-2 #cs-header-components #cs-site-logo {
+    display: table-cell;
+    vertical-align: middle;
+}
+#cs-main-header.cs-header-layout-2 #cs-header-components #cs-site-logo img {
+    height: 50px
+}
+
+/*------------------------------------------------------------------
+    11. Header banner
+-------------------------------------------------------------------*/
+.cs-header-banner {
+    margin-top: 30px;
+    margin-bottom: 30px
+}
+#cs-main-header.cs-header-layout-1 #cs-header-components .cs-header-banner {
+    text-align: right;
+}
+#cs-main-header.cs-header-layout-1.cs-header-center #cs-header-components .cs-header-banner {
+    text-align: center;
+}
+
+/*------------------------------------------------------------------
+    12. Primary menu
+-------------------------------------------------------------------*/
+#cs-main-header.cs-header-layout-1.cs-header-center #cs-primary-nav .cs-menu-links,
+#cs-main-header.cs-header-layout-2 #cs-primary-nav .cs-menu-links {
+    display: inline-block;
+}
+#cs-main-header.cs-header-layout-1.cs-header-left #cs-primary-nav .cs-menu-links {
+    float: left;
+}
+#cs-primary-nav {
+    font-size: 0;
+}
+#cs-main-header.cs-header-layout-1 #cs-primary-nav {
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.1);
+    -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.1);
+    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.1);
+}
+#cs-main-header.cs-header-layout-2 #cs-primary-nav {
+    float: right;
+}
+#cs-primary-nav nav > ul {
+    list-style: none;
+    padding: 0;
+    margin: 0
+}
+#cs-primary-nav nav > ul > li {
+    display: inline-block;
+    position: relative
+}
+#cs-primary-nav nav > ul > li > a {
+    position: relative;
+    font-size: 14px;
+    display: block;
+    padding: 0 10px;
+    color: #fff
+}
+#cs-main-header.cs-header-layout-1 #cs-primary-nav nav > ul > li > a {
+    line-height: 55px
+}
+#cs-main-header.cs-header-layout-2 #cs-primary-nav nav > ul > li > a {
+    line-height: 80px;
+}
+#cs-primary-nav nav > ul > li > a:hover,
+#cs-primary-nav nav > ul > li.current-menu-item a,
+#cs-primary-nav nav > ul > li:hover > a {
+    color: #fff
+}
+#cs-primary-nav nav > ul > li.menu-item-has-children > a {
+    padding-right: 25px
+}
+#cs-primary-nav nav ul li.menu-item-has-children i {
+    display: none;
+}
+#cs-primary-nav nav > ul > li.menu-item-has-children > a:after {
+    font-family: 'FontAwesome';
+    content: '\f0d7';
+    font-size: 10px;
+    position: absolute;
+    right: 15px;
+    top: 0
+}
+#cs-primary-nav ul.sub-menu {
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    left: 0;
+    z-index: 10;
+    min-width: 220px;
+    font-size: 13px;
+    text-align: left;
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.1);
+    -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.1);
+    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.1)
+}
+#cs-primary-nav ul.sub-menu a {
+    display: block;
+    padding: 5px 10px;
+    border-top: 1px solid rgba(255,255,255,0.15);
+}
+#cs-primary-nav ul.sub-menu ul.sub-menu {
+    left: 100%;
+    top: -1px
+}
+#cs-primary-nav li:hover > ul.sub-menu {
+    display: block
+}
+#cs-primary-nav ul.sub-menu li.menu-item-has-children > a {
+    padding-right: 20px
+}
+#cs-primary-nav ul.sub-menu li.menu-item-has-children > a:after {
+    font-family: 'FontAwesome';
+    content: '\f0da';
+    font-size: 10px;
+    position: absolute;
+    right: 10px;
+    top: 5px
+}
+#cs-primary-nav ul.sub-menu li {
+    position: relative;
+}
+#cs-primary-nav ul.sub-menu li:first-child {}
+#cs-primary-nav ul.sub-menu li a {}
+#cs-primary-nav ul.sub-menu li a:hover {}
+
+#cs-main-header.cs-nav-bold #cs-primary-nav nav > ul > li > a {
+    font-weight: 700
+}
+#cs-main-header.cs-nav-uppercase #cs-primary-nav nav > ul > li > a {
+    text-transform: uppercase;
+}
+
+/*------------------------------------------------------------------
+    12.1 Primary menu light
+-------------------------------------------------------------------*/
+#cs-main-header.cs-header-layout-1.cs-nav-light #cs-primary-nav {
+    background-color: #fff;
+}
+#cs-main-header.cs-header-layout-1.cs-nav-light.cs-header-light #cs-primary-nav {
+    border-top: 1px solid #eee
+}
+#cs-main-header.cs-header-layout-1.cs-nav-dark.cs-header-dark #cs-primary-nav {
+    border-top: 1px solid #333
+}
+#cs-main-header.cs-header-layout-1.cs-nav-light #cs-primary-nav nav > ul > li > a,
+#cs-main-header.cs-header-layout-2.cs-header-light #cs-primary-nav nav > ul > li > a {
+    color: #000
+}
+#cs-main-header.cs-header-layout-1.cs-nav-light #cs-primary-nav nav > ul > li.current-menu-item > a,
+#cs-main-header.cs-header-layout-1.cs-nav-light #cs-primary-nav nav > ul > li:hover > a,
+#cs-main-header.cs-header-layout-2.cs-header-light #cs-primary-nav nav > ul > li.current-menu-item > a,
+#cs-main-header.cs-header-layout-2.cs-header-light #cs-primary-nav nav > ul > li:hover > a {
+    color: #fff
+}
+#cs-main-header.cs-header-layout-1.cs-nav-light #cs-primary-nav ul.sub-menu,
+#cs-main-header.cs-header-layout-2.cs-header-light #cs-primary-nav ul.sub-menu {
+    background-color: #fff;
+    border: 1px solid #eee;
+}
+#cs-main-header.cs-header-layout-1.cs-nav-light #cs-primary-nav ul.sub-menu a,
+#cs-main-header.cs-header-layout-2.cs-header-light #cs-primary-nav ul.sub-menu a {
+    color: #000;
+    color: rgba(0,0,0,0.8);
+    border-top: 1px solid #eee
+}
+#cs-main-header.cs-header-layout-1.cs-nav-light #cs-primary-nav ul.sub-menu a:hover,
+#cs-main-header.cs-header-layout-2.cs-header-light #cs-primary-nav ul.sub-menu a:hover {
+    background-color: #f9f9f9;
+    color: #000;
+    color: rgba(0,0,0,1)
+}
+
+/*------------------------------------------------------------------
+    12.2 Primary menu dark
+-------------------------------------------------------------------*/
+#cs-main-header.cs-header-layout-1.cs-nav-dark #cs-primary-nav {
+    background-color: #000
+}
+#cs-main-header.cs-header-layout-1.cs-nav-dark #cs-primary-nav nav > ul > li > a {
+    color: #fff
+}
+#cs-main-header.cs-header-layout-1.cs-nav-dark #cs-primary-nav ul.sub-menu,
+#cs-main-header.cs-header-layout-2.cs-header-dark #cs-primary-nav ul.sub-menu {
+    background-color: #000
+}
+#cs-main-header.cs-header-layout-1.cs-nav-dark #cs-primary-nav ul.sub-menu ul.sub-menu {
+    top: 0
+}
+#cs-main-header.cs-header-layout-1.cs-nav-dark #cs-primary-nav ul.sub-menu a,
+#cs-main-header.cs-header-layout-2.cs-header-dark #cs-primary-nav ul.sub-menu a {
+    color: #fff;
+    color: rgba(255,255,255,0.8)
+}
+#cs-main-header.cs-header-layout-1.cs-nav-dark #cs-primary-nav ul.sub-menu a:hover,
+#cs-main-header.cs-header-layout-2.cs-header-dark #cs-primary-nav ul.sub-menu a:hover {
+    background-color: rgba(255,255,255,0.1);
+    color: #fff;
+    color: rgba(255,255,255,1)
+}
+
+/*------------------------------------------------------------------
+    12.3 Primary menu colored
+-------------------------------------------------------------------*/
+#cs-main-header.cs-header-layout-2.cs-header-colored #cs-primary-nav nav > ul > li > a {
+    color: #fff
+}
+#cs-main-header.cs-header-layout-2.cs-header-colored #cs-primary-nav ul.sub-menu {
+    background-color: #fff
+}
+#cs-main-header.cs-header-layout-2 #cs-primary-nav ul.sub-menu ul.sub-menu {
+    top: 0
+}
+#cs-main-header.cs-header-layout-1.cs-nav-colored #cs-primary-nav ul.sub-menu {
+    background-color: #fff;
+    border: 1px solid #eee;
+}
+#cs-main-header.cs-header-layout-2.cs-header-colored #cs-primary-nav ul.sub-menu a {
+    color: #000;
+    color: rgba(0,0,0,0.8);
+    border-top: 1px solid #eee;
+}
+#cs-main-header.cs-header-layout-1.cs-nav-colored #cs-primary-nav ul.sub-menu a {
+    color: #000;
+    color: rgba(0,0,0,0.8);
+    border-top: 1px solid #eee
+}
+#cs-main-header.cs-header-layout-2.cs-header-colored #cs-primary-nav ul.sub-menu a:hover {
+    background-color: #f9f9f9;
+    color: #000;
+    color: rgba(0,0,0,1)
+}
+#cs-main-header.cs-header-layout-1.cs-nav-colored #cs-primary-nav nav > ul > li.current-menu-item a,
+#cs-main-header.cs-header-layout-1.cs-nav-colored #cs-primary-nav nav > ul > li:hover > a,
+#cs-main-header.cs-header-layout-2.cs-header-colored #cs-primary-nav nav > ul > li.current-menu-item a,
+#cs-main-header.cs-header-layout-2.cs-header-colored #cs-primary-nav nav > ul > li:hover > a {
+    background-color: #fff;
+    color: #000
+}
+#cs-main-header.cs-header-layout-1.cs-nav-colored #cs-primary-nav ul.sub-menu a:hover {
+    background-color: #f9f9f9;
+    color: #000;
+    color: rgba(0,0,0,1)
+}
+
+/*------------------------------------------------------------------
+    12.4 Toggle mobile search
+-------------------------------------------------------------------*/
+.cs-toggle-mobile-search {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 30px;
+    height: 35px;
+    font-size: 18px;
+    line-height: 35px;
+    text-align: center;
+    cursor: pointer;
+}
+.cs-toggle-mobile-search a {
+    color: #000
+}
+#cs-main-header.cs-header-dark .cs-toggle-mobile-search a,
+#cs-main-header.cs-header-colored .cs-toggle-mobile-search a {
+    color: #fff
+}
+
+/*------------------------------------------------------------------
+    12.5 Toggle menu nav
+-------------------------------------------------------------------*/
+.cs-toggle-mobile-nav {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 30px;
+    height: 35px;
+    font-size: 18px;
+    line-height: 35px;
+    text-align: center;
+    cursor: pointer;
+}
+#cs-main-header.cs-header-dark .cs-toggle-mobile-nav,
+#cs-main-header.cs-header-colored .cs-toggle-mobile-nav {
+    color: #fff
+}
+
+/*------------------------------------------------------------------
+    12.6 Custom links
+-------------------------------------------------------------------*/
+#cs-main-header.cs-header-layout-1.cs-header-center #cs-primary-nav .cs-custom-links,
+#cs-main-header.cs-header-layout-2 #cs-primary-nav .cs-custom-links {
+    display: inline-block;
+}
+#cs-main-header.cs-header-layout-1.cs-header-left #cs-primary-nav .cs-custom-links {
+    float: right;
+}
+#cs-main-header #cs-primary-nav .cs-custom-links .cs-shopping-cart {
+    position: absolute;
+    display: none;
+    z-index: 1;
+    right: 0
+}
+#cs-main-header #cs-primary-nav .cs-custom-links ul li:hover > div {
+    display: block;
+}
+#cs-main-header.cs-header-layout-1.cs-nav-light #cs-primary-nav .cs-custom-links .cs-shopping-cart,
+#cs-main-header.cs-header-layout-2.cs-header-light #cs-primary-nav .cs-custom-links .cs-shopping-cart,
+#cs-main-header.cs-header-layout-2.cs-header-colored #cs-primary-nav .cs-custom-links .cs-shopping-cart,
+#cs-main-header.cs-header-layout-1.cs-nav-colored #cs-primary-nav .cs-custom-links .cs-shopping-cart {
+    background-color: #fff;
+}
+#cs-main-header.cs-header-layout-1.cs-nav-dark #cs-primary-nav .cs-custom-links .cs-shopping-cart,
+#cs-main-header.cs-header-layout-2.cs-header-dark #cs-primary-nav .cs-custom-links .cs-shopping-cart {
+    background-color: #000
+}
+#cs-main-header #cs-primary-nav .cs-custom-links .cs-shopping-cart {
+    padding: 20px;
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.1);
+    -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.1);
+    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.1);
+    min-width: 300px
+}
+#cs-main-header #cs-primary-nav .cs-custom-links .cs-shopping-cart .cs-btn {
+    margin: 0;
+    width: 100%
+}
+#cs-main-header #cs-primary-nav .cs-custom-links .cs-shopping-cart .cs-shopping-cart-empty {
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+#cs-main-header.cs-header-layout-1.cs-nav-light #cs-primary-nav .cs-custom-links .cs-shopping-cart,
+#cs-main-header.cs-header-layout-2.cs-header-light #cs-primary-nav .cs-custom-links .cs-shopping-cart,
+#cs-main-header.cs-header-layout-2.cs-header-colored #cs-primary-nav .cs-custom-links .cs-shopping-cart,
+#cs-main-header.cs-header-layout-1.cs-nav-colored #cs-primary-nav .cs-custom-links .cs-shopping-cart {
+    border: 1px solid #eee;
+}
+#cs-main-header.cs-header-layout-1.cs-nav-light #cs-primary-nav .cs-custom-links .cs-shopping-cart .cs-shopping-cart-empty,
+#cs-main-header.cs-header-layout-2.cs-header-light #cs-primary-nav .cs-custom-links .cs-shopping-cart .cs-shopping-cart-empty,
+#cs-main-header.cs-header-layout-2.cs-header-colored #cs-primary-nav .cs-custom-links .cs-shopping-cart .cs-shopping-cart-empty,
+#cs-main-header.cs-header-layout-1.cs-nav-colored #cs-primary-nav .cs-custom-links .cs-shopping-cart .cs-shopping-cart-empty {
+    color: #000
+}
+#cs-main-header.cs-header-layout-1.cs-nav-dark #cs-primary-nav .cs-custom-links .cs-shopping-cart,
+#cs-main-header.cs-header-layout-2.cs-header-dark #cs-primary-nav .cs-custom-links .cs-shopping-cart {
+    border: 1px solid #333
+}
+#cs-main-header.cs-header-layout-1.cs-nav-dark #cs-primary-nav .cs-custom-links .cs-shopping-cart .cs-shopping-cart-empty,
+#cs-main-header.cs-header-layout-2.cs-header-dark #cs-primary-nav .cs-custom-links .cs-shopping-cart .cs-shopping-cart-empty {
+    color: #999;
+}
+
+/*------------------------------------------------------------------
+    12.7 Search popup
+-------------------------------------------------------------------*/
+#cs-search-popup {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    padding: 0 40px;
+}
+#cs-search-popup h4 {
+    color: #fff;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 36px;
+    margin-bottom: 20px
+}
+#cs-search-popup input[type="search"] {
+    width: 100%;
+    display: block;
+    background-color: transparent;
+    padding: 10px 0;
+    margin: 0;
+    border: 0;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+    font-size: 16px
+}
+#cs-search-popup .mfp-close {
+    color: #fff;
+    width: auto;
+    right: 40px;
+}
+
+/*------------------------------------------------------------------
+    13. Off-canvas wrap
+-------------------------------------------------------------------*/
+body.active-offcanvas {
+    overflow: hidden;
+}
+.cs-offcanvas-top-wrap {
+    padding: 20px 30px;
+    position: relative;
+}
+.cs-offcanvas-top-wrap .close {
+    position: absolute;
+    right: 30px;
+    top: 20px;
+    height: 35px;
+    font-size: 18px;
+    line-height: 35px;
+    text-align: center;
+    cursor: pointer;
+}
+.cs-offcanvas-wrap.light .cs-offcanvas-top-wrap .close {
+    color: #000
+}
+.cs-offcanvas-wrap.dark .cs-offcanvas-top-wrap .close {
+    color: #fff
+}
+.cs-offcanvas-top-wrap .cs-offcanvas-logo #cs-site-logo {
+    margin: 0;
+    height: 35px;
+    padding: 0
+}
+.cs-offcanvas-top-wrap .cs-offcanvas-logo #cs-site-logo img {
+    height: 35px
+}
+.cs-offcanvas-wrap {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    z-index: 99999;
+    overflow-y: scroll;
+    font-size: 14px;
+    line-height: 24px;
+    -webkit-transform: translate3d(-100%,0,0);
+    -moz-transform: translate3d(-100%,0,0);
+    -ms-transform: translate3d(-100%,0,0);
+    -o-transform: translate3d(-100%,0,0);
+    transform: translate3d(-100%,0,0);
+    -webkit-transition: -webkit-transform 0.2s ease;
+    -moz-transition: -moz-transform 0.2s ease;
+    -ms-transition: -ms-transform 0.2s ease;
+    -o-transition: -o-transform 0.2s ease;
+    transition: transform 0.2s ease;
+}
+.cs-offcanvas-wrap.active {
+    -webkit-transform: translate3d(0,0,0);
+    -moz-transform: translate3d(0,0,0);
+    -ms-transform: translate3d(0,0,0);
+    -o-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+}
+.cs-offcanvas-wrap.light {
+    background-color: #fff
+}
+.cs-offcanvas-wrap.dark {
+    background-color: #000
+}
+
+/*------------------------------------------------------------------
+    13.1 Off-canvas nav
+-------------------------------------------------------------------*/
+.cs-offcanvas-nav-wrap {
+    padding: 20px 30px
+}
+.cs-offcanvas-nav nav ul {
+    position: relative;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 700
+}
+.cs-offcanvas-nav nav ul li {
+    width: 100%;
+    position: relative;
+    display: block;
+    cursor: pointer;
+}
+.cs-offcanvas-nav nav > ul > li:first-child {
+    border-top: 0 !important
+}
+.cs-offcanvas-wrap.light .cs-offcanvas-nav nav ul li {
+    border-top: 1px solid #eee
+}
+.cs-offcanvas-wrap.dark .cs-offcanvas-nav nav ul li {
+    border-top: 1px solid #333
+}
+.cs-offcanvas-nav nav ul li a {
+    display: inline-block;
+    padding: 10px 0;
+}
+.cs-offcanvas-wrap.light .cs-offcanvas-nav nav ul li a {
+    color: #000
+}
+.cs-offcanvas-wrap.dark .cs-offcanvas-nav nav ul li a {
+    color: #fff
+}
+.cs-offcanvas-nav nav ul li.menu-item-has-children i {
+    position: absolute;
+    top: 12px;
+    right: 4px;
+    text-align: center;
+    font-size: 18px;
+    cursor: pointer;
+    -webkit-transition: -webkit-transform 0.2s;
+    -o-transition: -o-transform 0.2s;
+    transition: transform 0.2s;
+}
+.cs-offcanvas-wrap.light .cs-offcanvas-nav nav ul li.menu-item-has-children i {
+    color: #000
+}
+.cs-offcanvas-wrap.dark .cs-offcanvas-nav nav ul li.menu-item-has-children i {
+    color: #fff
+}
+.cs-offcanvas-nav nav ul li.show-sub-menu > i {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+.cs-offcanvas-nav ul.sub-menu {
+    display: none;
+    padding-left: 20px
+}
+
+/*------------------------------------------------------------------
+    13.2 Off-canvas cart
+-------------------------------------------------------------------*/
+.cs-offcanvas-cart-wrap {
+    padding: 20px 30px
+}
+
+/*------------------------------------------------------------------
+    14. Sliders
+-------------------------------------------------------------------*/
+/*------------------------------------------------------------------
+    14.1 Carousel slider
+-------------------------------------------------------------------*/
+.cs-carousel-slider {
+    position: relative;
+}
+.cs-carousel-slider .cs-post-item {
+    position: relative;
+}
+.cs-carousel-slider .cs-post-item:hover .cs-post-thumb img {
+    opacity: 0.8
+}
+.cs-carousel-slider .cs-post-details {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+    padding: 25px
+}
+.cs-carousel-slider .cs-post-thumb {
+    margin: 0
+}
+.cs-carousel-slider .cs-post-rating {
+    top: 15px;
+    bottom: auto;
+}
+.cs-carousel-slider .cs-post-thumb a:before {
+    background: rgba(0,0,0,1);
+    background: rgba(255,255,255,0);
+    background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(0,0,0,0.7) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,0)), color-stop(100%, rgba(0,0,0,0.7)));
+    background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(0,0,0,0.7) 100%);
+    background: -o-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(0,0,0,0.7) 100%);
+    background: -ms-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(0,0,0,0.7) 100%);
+    background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(0,0,0,0.7) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000', GradientType=0 );
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 50%;
+    width: 100%;
+    display: block;
+    content: " ";
+}
+.cs-carousel-slider .cs-post-icon {
+    left: 25px;
+    top: 25px;
+    margin: 0
+}
+.cs-carousel-slider .cs-post-title h3 a,
+.cs-carousel-slider .cs-post-meta a,
+.cs-carousel-slider .cs-post-excerpt {
+    color: #fff
+}
+.cs-carousel-slider .cs-post-excerpt {
+    margin: 5px 0 0 0
+}
+.cs-carousel-slider .cs-post-excerpt p {
+    line-height: 22px
+}
+.cs-carousel-slider .cs-post-excerpt p:last-child {
+    margin-bottom: 0
+}
+.cs-carousel-slider .cs-post-title {
+    margin: 0
+}
+.cs-carousel-slider .cs-post-thumb img {
+    backface-visibility: visible;
+    -webkit-backface-visibility: visible
+}
+[data-slides-visible="2"] .cs-post-title h3 {
+    font-size: 26px;
+    line-height: 32px
+}
+.cs-main-content:not(.cs-full-width) [data-slides-visible="2"] .cs-post-title h3 {
+    font-size: 22px;
+    line-height: 30px
+}
+[data-slides-visible="3"] .cs-post-title h3 {
+    font-size: 18px;
+    line-height: 26px
+}
+[data-slides-visible="4"] .cs-post-title h3 {
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 400
+}
+.cs-main-content:not(.cs-full-width) [data-slides-visible="2"] .cs-post-icon,
+[data-slides-visible="4"] .cs-post-icon,
+[data-slides-visible="4"] .cs-post-rating,
+[data-slides-visible="4"] .cs-clearfix,
+[data-slides-visible="3"] .cs-post-icon,
+[data-slides-visible="3"] .cs-post-rating,
+[data-slides-visible="3"] .cs-clearfix,
+[data-slides-visible="3"] .cs-post-excerpt {
+    display: none;
+}
+
+/*------------------------------------------------------------------
+    14.2 Big slider
+-------------------------------------------------------------------*/
+.cs-big-slider {
+    position: relative;
+    margin-bottom: 50px
+}
+.cs-section-wrapper.with-padding .cs-big-slider:last-child {
+    margin-bottom: 0
+}
+.cs-big-slider .cs-post-item {
+    position: relative;
+}
+.cs-big-slider .cs-post-details {
+    position: absolute;
+    width: 100%;
+    max-width: 70%;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    padding: 25px;
+    text-align: center;
+}
+.cs-big-slider .cs-post-thumb {
+    margin: 0;
+    background-color: #000
+}
+.cs-big-slider .cs-post-thumb img {
+    opacity: 0.8;
+    backface-visibility: visible;
+    -webkit-backface-visibility: visible
+}
+.cs-big-slider .cs-post-rating {
+    top: 15px;
+    bottom: auto;
+}
+.cs-big-slider .cs-post-thumb a:before {
+    background: rgba(0,0,0,1);
+    background: rgba(255,255,255,0);
+    background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(0,0,0,0.7) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,0)), color-stop(100%, rgba(0,0,0,0.7)));
+    background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(0,0,0,0.7) 100%);
+    background: -o-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(0,0,0,0.7) 100%);
+    background: -ms-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(0,0,0,0.7) 100%);
+    background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(0,0,0,0.7) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000', GradientType=0 );
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 50%;
+    width: 100%;
+    display: block;
+    content: " ";
+}
+.cs-big-slider .cs-post-title h3 a,
+.cs-big-slider .cs-post-meta a,
+.cs-big-slider .cs-post-excerpt {
+    color: #fff
+}
+.cs-big-slider .cs-post-title {
+    margin: 0
+}
+.cs-big-slider .cs-post-title h3 {
+    font-size: 38px;
+    line-height: 52px
+}
+.cs-main-content:not(.cs-full-width) .cs-big-slider .cs-post-title h3 {
+    font-size: 28px;
+    line-height: 40px
+}
+.cs-big-slider .cs-post-icon {
+    display: none;
+}
+
+/*------------------------------------------------------------------
+    14.3 Divit slider
+-------------------------------------------------------------------*/
+.cs-divit-slider {
+    position: relative;
+}
+.cs-divit-slider .gallery-top {
+    width: 100%;
+}
+.cs-divit-slider .gallery-top:before {
+    background-image: url(../img/loading.gif);
+    content: " ";
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -32px;
+    margin-top: -107px;
+    width: 64px;
+    height: 64px;
+}
+.cs-divit-slider .gallery-top .cs-post-item {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 700px;
+    overflow: hidden;
+}
+.cs-divit-slider .gallery-top .cs-post-item:before {
+    background: rgba(0,0,0,0);
+    background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0,0,0,0)), color-stop(100%, rgba(0,0,0,0.8)));
+    background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%);
+    background: -o-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%);
+    background: -ms-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%);
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000', GradientType=0 );
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    display: block;
+    content: " ";
+}
+.cs-divit-slider .gallery-top .cs-post-details {
+    position: absolute;
+    width: 100%;
+    max-width: 1140px;
+    padding: 0 100px;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    text-align: center;
+    margin-top: -75px
+}
+.cs-divit-slider .gallery-top .cs-post-title h3 {
+    font-size: 46px;
+    line-height: 64px;
+}
+.cs-divit-slider .gallery-thumbs .cs-post-title h3,
+.cs-divit-slider .gallery-top .cs-post-title h3 a,
+.cs-divit-slider .cs-post-meta a {
+    color: #fff
+}
+.cs-divit-slider .cs-thumbs-overlay {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+}
+.cs-divit-slider .gallery-thumbs {
+    max-width: 1140px
+}
+.cs-divit-slider .gallery-thumbs:after {
+    content: " ";
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    opacity: 0.3;
+    background-color: #fff;
+    left: 0;
+    bottom: 0
+}
+.cs-divit-slider .gallery-thumbs .swiper-slide {
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+    padding-bottom: 25px;
+}
+.cs-divit-slider .gallery-thumbs .swiper-slide-active {
+    opacity: 1;
+    border-bottom-style: solid;
+    border-bottom-width: 5px;
+}
+.cs-divit-slider .gallery-thumbs .cs-post-thumb {
+    float: left;
+    width: 120px;
+    margin-right: 15px;
+    margin-bottom: 0
+}
+.cs-divit-slider .gallery-thumbs .cs-post-details {
+    overflow: hidden;
+}
+.cs-divit-slider .gallery-thumbs .cs-post-title {
+    margin: 0
+}
+.cs-divit-slider .gallery-thumbs .cs-post-title h3 {
+    font-size: 16px;
+    line-height: 24px;
+}
+.cs-divit-slider .gallery-thumbs .cs-post-icon {
+    width: 32px;
+    height: 32px;
+    line-height: 30px;
+    font-size: 10px;
+    margin-top: -16px;
+    margin-left: -16px;
+}
+
+/*------------------------------------------------------------------
+    15. Post layout
+-------------------------------------------------------------------*/
+/*------------------------------------------------------------------
+    15.1 Post
+-------------------------------------------------------------------*/
+.cs-post-item {
+    display: block;
+    position: relative;
+}
+.cs-post-item:before,
+.cs-post-item:after {
+    content: " ";
+    display: table
+}
+.cs-post-item:after {
+    clear: both
+}
+.cs-post-thumb {
+    position: relative;
+    margin-bottom: 10px
+}
+figure.hidden,
+.cs-post-thumb.hidden {
+    opacity: 0
+}
+figure.visible,
+.cs-post-thumb.visible {
+    opacity: 1
+}
+figure.cs-animate-element,
+.cs-post-thumb.cs-animate-element {
+    -webkit-transition: opacity 0.4s;
+    -moz-transition: opacity 0.4s;
+    -o-transition: opacity 0.4s;
+    transition: opacity 0.4s;
+    transition-timing-function: cubic-bezier(0.42, 0.0, 0.58, 1.0)
+}
+.cs-post-icon {
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    background-color: #000;
+    background-color: rgba(0,0,0,0.6);
+    width: 46px;
+    height: 46px;
+    line-height: 42px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -23px;
+    margin-left: -23px;
+    z-index: 1
+}
+.cs-post-icon i {
+    color: #fff
+}
+.cs-post-rating {
+    font-size: 14px;
+    font-family: 'FontAwesome';
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    white-space: nowrap;
+    word-wrap: normal;
+    font-style: normal;
+    text-align: center;
+    z-index: 1;
+}
+.cs-post-rating > div {
+    position: relative;
+}
+.cs-post-rating .cs-stars-color {}
+.cs-post-rating .cs-stars-color:before {
+    content: "\f006" "\f006" "\f006" "\f006" "\f006";
+    display: block;
+}
+.cs-post-rating .cs-stars-active-color {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden
+}
+.cs-post-rating .cs-stars-active-color:before {
+    content: "\f005" "\f005" "\f005" "\f005" "\f005";
+    display: block;
+}
+.cs-post-thumb img {
+    width: 100%;
+    -webkit-transition: 0.2s;
+    -moz-transition: 0.2s;
+    -o-transition: 0.2s;
+    transition: 0.2s;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+.cs-post-thumb:hover img {
+    opacity: 0.8
+}
+.cs-post-details {}
+.cs-post-categories {
+    font-size: 0;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-right: 10px
+}
+.cs-post-categories h5 {
+    font-size: 10px;
+    font-weight: 400;
+    display: inline-block;
+    margin: 0 2px 0 0
+}
+.cs-post-categories h5 a {
+    padding: 2px 6px;
+    color: #fff;
+}
+.cs-post-categories h5 a:hover {
+    background-color: #000
+}
+.cs-post-meta {
+    text-transform: uppercase;
+    font-size: 0;
+    display: inline-block;
+}
+.cs-post-meta a {
+    color: #000
+}
+.cs-post-meta span {
+    font-size: 10px;
+    margin-right: 5px;
+    display: inline-block;
+    line-height: 1
+}
+.cs-post-meta span:after {
+    content: "\00b7";
+    padding-left: 5px;
+}
+.cs-post-meta span:last-child {
+    margin-right: 0
+}
+.cs-post-meta span:last-child:after {
+    display: none;
+}
+.cs-post-title {
+    display: block;
+    clear: both;
+    margin: 10px 0
+}
+.cs-post-title h3 {
+    margin: 0
+}
+.cs-post-title h3 a {
+    color: #000
+}
+.cs-post-excerpt {
+    margin-bottom: 10px;
+    color: #555;
+}
+.cs-post-readmore a {
+    display: block;
+    width: 34px;
+    height: 34px;
+    text-align: center;
+    line-height: 32px;
+    border-width: 1px;
+    border-style: solid;
+}
+
+/*------------------------------------------------------------------
+    15.2 Section title
+-------------------------------------------------------------------*/
+.cs-section-title {
+    position: relative;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #eee
+}
+.cs-section-wrapper.with-background .cs-section-title {
+    border-bottom: 1px solid #ddd
+}
+.cs-section-title h3 {
+    color: #000;
+    padding-bottom: 10px;
+    font-size: 22px;
+    line-height: 28px;
+    margin: 0;
+    display: inline-block;
+}
+.cs-section-title h3:after {
+    position: absolute;
+    content: " ";
+    display: block;
+    width: 35px;
+    height: 3px;
+    bottom: 0;
+    left: 0
+}
+.cs-section-title a {
+    font-size: 12px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-style: solid;
+    border-width: 1px;
+    display: block;
+    line-height: 1;
+    padding: 5px 10px
+}
+
+/*------------------------------------------------------------------
+    15.3 Page title
+-------------------------------------------------------------------*/
+.cs-page-title {
+    position: relative;
+    margin-bottom: 50px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #eee
+}
+.cs-page-title h1 {
+    margin: 0
+}
+.cs-page-title .cs-category-description {
+    margin-top: 20px
+}
+.cs-page-title .cs-category-description p:last-child {
+    margin-bottom: 0
+}
+
+/*------------------------------------------------------------------
+    15.4 Blog list
+-------------------------------------------------------------------*/
+.cs-blog-list {}
+.cs-blog-list .cs-post-item {
+    margin-bottom: 50px
+}
+.cs-section-wrapper.with-padding .cs-blog-list:last-child .cs-post-item:last-child {
+    margin-bottom: 0
+}
+.cs-blog-list .cs-post-thumb {
+    float: left;
+    width: 45%;
+    margin-right: 30px;
+    margin-bottom: 0
+}
+.cs-blog-list .cs-post-details {
+    overflow: hidden;
+}
+.cs-blog-list .cs-post-title h3 {
+    font-size: 28px;
+    line-height: 36px;
+}
+.cs-main-content:not(.cs-full-width) .cs-blog-list .cs-post-title h3 {
+    font-size: 22px;
+    line-height: 30px;
+}
+
+/*------------------------------------------------------------------
+    15.5 Blog classic
+-------------------------------------------------------------------*/
+.cs-blog-classic {}
+.cs-section-wrapper.with-padding .cs-blog-classic:last-child .cs-post-item:last-child {
+    margin-bottom: 0
+}
+.cs-blog-classic .cs-post-item {
+    margin-bottom: 50px
+}
+.cs-blog-classic .cs-post-title h3 {
+    font-size: 34px;
+    line-height: 42px
+}
+.cs-main-content:not(.cs-full-width) .cs-blog-classic .cs-post-title h3 {
+    font-size: 28px;
+    line-height: 36px
+}
+
+/*------------------------------------------------------------------
+    15.6 Blog two columns
+-------------------------------------------------------------------*/
+.cs-blog-two-columns:before,
+.cs-blog-two-columns:after {
+    content: " ";
+    display: table
+}
+.cs-blog-two-columns:after {
+    clear: both
+}
+.cs-section-wrapper.with-padding .cs-blog-two-columns:last-child .cs-post-item:nth-last-of-type(-n+2)  {
+    margin-bottom: 0
+}
+.cs-blog-two-columns .cs-post-item {
+    margin-bottom: 50px;
+    float: left;
+    width: 48.5%;
+    margin-right: 3%
+}
+.cs-blog-two-columns .cs-post-item.first {
+    clear: left;
+}
+.cs-blog-two-columns .cs-post-item.last {
+    margin-right: 0
+}
+.cs-main-content:not(.cs-full-width) .cs-blog-two-columns .cs-post-title h3 {
+    font-size: 20px;
+    line-height: 28px;
+}
+
+/*------------------------------------------------------------------
+    15.7 Blog three columns
+-------------------------------------------------------------------*/
+.cs-blog-three-columns:before,
+.cs-blog-three-columns:after {
+    content: " ";
+    display: table
+}
+.cs-blog-three-columns:after {
+    clear: both
+}
+.cs-section-wrapper.with-padding .cs-blog-three-columns:last-child .cs-post-item:nth-last-of-type(-n+3)  {
+    margin-bottom: 0
+}
+.cs-blog-three-columns .cs-post-item {
+    margin-bottom: 50px;
+    float: left;
+    width: 31.3%;
+    margin-right: 3%
+}
+.cs-blog-three-columns .cs-post-item.first {
+    clear: left;
+}
+.cs-blog-three-columns .cs-post-item.last {
+    margin-right: 0
+}
+.cs-blog-three-columns .cs-post-title h3 {
+    font-size: 22px;
+    line-height: 30px
+}
+.cs-main-content:not(.cs-full-width) .cs-blog-three-columns .cs-post-thumb {
+    margin-bottom: 5px
+}
+.cs-main-content:not(.cs-full-width) .cs-blog-three-columns .cs-post-title {
+    margin: 0
+}
+.cs-main-content:not(.cs-full-width) .cs-blog-three-columns .cs-post-title h3 {
+    font-size: 16px;
+    line-height: 22px;
+}
+
+/*------------------------------------------------------------------
+    15.8 Blog mixed
+-------------------------------------------------------------------*/
+.cs-blog-mixed {
+    margin-bottom: 50px
+}
+.cs-section-wrapper.with-padding .cs-blog-mixed:last-child {
+    margin-bottom: 0
+}
+.cs-blog-mixed:before,
+.cs-blog-mixed:after {
+    content: " ";
+    display: table
+}
+.cs-blog-mixed:after {
+    clear: both
+}
+.cs-blog-mixed .cs-post-item {
+    width: 50%;
+    float: left;
+    padding-right: 25px
+}
+.cs-main-content:not(.cs-full-width) .cs-blog-mixed .cs-post-item:first-child .cs-post-title h3 {
+    font-size: 20px;
+    line-height: 28px;
+}
+.cs-blog-mixed .cs-post-item:first-child {
+    clear: right;
+}
+.cs-blog-mixed .cs-post-item:not(:first-of-type) {
+    margin-bottom: 25px
+}
+.cs-blog-mixed .cs-post-item:not(:first-of-type) .cs-post-thumb {
+    float: left;
+    width: 120px;
+    margin-right: 15px;
+    margin-bottom: 0
+}
+.cs-blog-mixed .cs-post-item:not(:first-of-type) .cs-post-details {
+    overflow: hidden;
+}
+.cs-blog-mixed .cs-post-item:not(:first-of-type) .cs-post-title {
+    margin: 0
+}
+.cs-blog-mixed .cs-post-item:not(:first-of-type) .cs-post-title h3 {
+    font-size: 14px;
+    line-height: 20px;
+}
+.cs-blog-mixed .cs-post-item:not(:first-of-type) .cs-post-icon {
+    width: 32px;
+    height: 32px;
+    line-height: 30px;
+    font-size: 10px;
+    margin-top: -16px;
+    margin-left: -16px;
+}
+
+/*------------------------------------------------------------------
+    15.9 Blog latest videos
+-------------------------------------------------------------------*/
+.cs-blog-latest-videos:before,
+.cs-blog-latest-videos:after {
+    content: " ";
+    display: table
+}
+.cs-blog-latest-videos:after {
+    clear: both
+}
+.cs-blog-latest-videos {
+    margin-bottom: 50px
+}
+.cs-blog-latest-videos .cs-post-item:first-child .cs-post-icon {
+    left: 20px;
+    top: 20px;
+    margin: 0
+}
+.cs-section-wrapper.with-padding .cs-blog-latest-videos:last-child {
+    margin-bottom: 0
+}
+.cs-blog-latest-videos .cs-post-item:first-child {
+    position: relative;
+    margin-bottom: 25px
+}
+.cs-blog-latest-videos .cs-post-item:first-child .cs-post-details {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+    padding: 25px;
+    max-width: 70%
+}
+.cs-blog-latest-videos .cs-post-item:first-child .cs-post-thumb {
+    margin: 0
+}
+.cs-blog-latest-videos .cs-post-item:first-child .cs-post-rating {
+    top: 15px;
+    bottom: auto;
+}
+.cs-blog-latest-videos .cs-post-item:first-child .cs-post-thumb a:before {
+    background: rgba(0,0,0,1);
+    background: rgba(255,255,255,0);
+    background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(0,0,0,0.7) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,0)), color-stop(100%, rgba(0,0,0,0.7)));
+    background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(0,0,0,0.7) 100%);
+    background: -o-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(0,0,0,0.7) 100%);
+    background: -ms-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(0,0,0,0.7) 100%);
+    background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(0,0,0,0.7) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000', GradientType=0 );
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 50%;
+    width: 100%;
+    display: block;
+    content: " ";
+}
+.cs-blog-latest-videos .cs-post-item:first-child .cs-post-title h3 {
+    font-size: 32px;
+    line-height: 40px
+}
+.cs-blog-latest-videos .cs-post-item:first-child .cs-post-title h3 a,
+.cs-blog-latest-videos .cs-post-item:first-child .cs-post-meta a,
+.cs-blog-latest-videos .cs-post-item:first-child .cs-post-excerpt {
+    color: #fff
+}
+.cs-blog-latest-videos .cs-post-item:first-child .cs-post-title {
+    margin: 0
+}
+.cs-blog-latest-videos .cs-post-item:not(:first-of-type) {
+    width: 50%;
+    float: left;
+    padding-right: 25px;
+}
+.cs-blog-latest-videos .cs-post-item:not(:first-of-type) .cs-post-thumb {
+    float: left;
+    width: 120px;
+    margin-right: 15px;
+    margin-bottom: 0
+}
+.cs-blog-latest-videos .cs-post-item:not(:first-of-type) .cs-post-details {
+    overflow: hidden;
+}
+.cs-blog-latest-videos .cs-post-item:not(:first-of-type) .cs-post-title {
+    margin: 0
+}
+.cs-blog-latest-videos .cs-post-item:not(:first-of-type) .cs-post-title h3 {
+    font-size: 16px;
+    line-height: 22px;
+}
+.cs-main-content:not(.cs-full-width) .cs-blog-latest-videos .cs-post-item:not(:first-of-type) .cs-post-title h3 {
+    font-size: 14px;
+    line-height: 20px;
+}
+.cs-blog-latest-videos .cs-post-item:not(:first-of-type) .cs-post-icon {
+    width: 32px;
+    height: 32px;
+    line-height: 30px;
+    font-size: 10px;
+    margin-top: -16px;
+    margin-left: -16px;
+}
+
+/*------------------------------------------------------------------
+    15.10 Pagination
+-------------------------------------------------------------------*/
+ul.page-numbers {
+    margin-bottom: 50px;
+    list-style: none;
+    padding: 0;
+    clear: both;
+    font-size: 12px
+}
+ul.page-numbers:before,
+ul.page-numbers:after {
+    content: " ";
+    display: table
+}
+ul.page-numbers:after {
+    clear: both
+}
+ul.page-numbers li {
+    display: block;
+    float: left;
+    margin-right: 1px
+}
+ul.page-numbers li span,
+ul.page-numbers li a {
+    display: block;
+    padding: 8px 12px;
+    line-height: 1;
+    background-color: #eee;;
+    color: #000;
+    -webkit-transition: all .2s;
+    -moz-transition: all .2s;
+    -o-transition: all .2s;
+    transition: all .2s;
+}
+ul.page-numbers li a:hover,
+ul.page-numbers li span.current {
+    color: #fff
+}
+
+/*------------------------------------------------------------------
+    16. Post single
+-------------------------------------------------------------------*/
+.cs-post-article {
+    margin-bottom: 50px
+}
+.cs-post-single-header {
+    margin-bottom: 30px
+}
+.cs-post-single-header .cs-post-title h1 {}
+.cs-post-single-header .cs-post-subtitle h2 {
+    font-weight: 400;
+    color: #777;
+    font-size: 22px;
+    line-height: 32px;
+}
+.cs-post-single-media {
+    margin: 0 0 30px 0;
+    padding: 0;
+    width: 100%
+}
+.cs-post-single-media img,
+.cs-post-single-media video,
+.cs-post-single-media audio,
+.cs-post-single-media iframe {
+    width: 100%
+}
+.cs-post-single-media .cs-big-slider .cs-post-thumb a:before {
+    display: none;
+}
+.cs-post-single-media .cs-big-slider .cs-post-thumb img {
+    opacity: 1
+}
+.cs-post-single-media .cs-big-slider .swiper-button-prev,
+.cs-post-single-media .cs-big-slider .swiper-button-next {
+    margin-top: -30px
+}
+.cs-post-single-media .cs-big-slider .swiper-button-prev:hover,
+.cs-post-single-media .cs-big-slider .swiper-button-next:hover {
+    margin-top: -35px
+}
+.cs-large-media {
+    margin-top: 50px
+}
+.cs-large-media .cs-post-single-media {
+    margin-bottom: 0
+}
+.cs-large-media .cs-post-details {
+    position: absolute;
+    width: 100%;
+    max-width: 70%;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    padding: 25px;
+    text-align: center;
+}
+.cs-large-media .cs-post-thumb {
+    margin: 0;
+    background-color: #000
+}
+.cs-large-media .cs-post-thumb img {
+    opacity: 0.8;
+    backface-visibility: visible;
+    -webkit-backface-visibility: visible
+}
+.cs-large-media .cs-post-rating {
+    top: 15px;
+    bottom: auto;
+}
+.cs-large-media .cs-post-thumb a:before {
+    background: rgba(0,0,0,1);
+    background: rgba(255,255,255,0);
+    background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(0,0,0,0.7) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,0)), color-stop(100%, rgba(0,0,0,0.7)));
+    background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(0,0,0,0.7) 100%);
+    background: -o-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(0,0,0,0.7) 100%);
+    background: -ms-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(0,0,0,0.7) 100%);
+    background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(0,0,0,0.7) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000', GradientType=0 );
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 50%;
+    width: 100%;
+    display: block;
+    content: " ";
+}
+.cs-large-media .cs-post-title h1,
+.cs-large-media .cs-post-subtitle h2,
+.cs-large-media .cs-post-meta a {
+    color: #fff
+}
+.cs-large-media .cs-post-title {
+    margin: 0
+}
+.cs-large-media .cs-post-title h1 {
+    font-size: 38px;
+    line-height: 50px
+}
+.cs-large-media .cs-post-subtitle h2 {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 34px;
+    opacity: 0.8
+}
+.cs-large-media .cs-post-icon {
+    display: none;
+}
+.cs-post-share {
+    margin-bottom: 30px
+}
+.cs-post-share ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0;
+    width: 100%;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row nowrap;
+    -moz-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+    -webkit-justify-content: space-around;
+    justify-content: space-around;
+}
+.cs-post-share ul li {
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    -o-flex: 1 1 auto;
+    flex: 1 1 auto;
+    font-size: 14px;
+    margin-right: 2px
+}
+.cs-post-share ul li:last-child {
+    margin-right: 0
+}
+.cs-post-share ul li.facebook a {
+    background-color: #3b5998
+}
+.cs-post-share ul li.twitter a {
+    background-color: #55acee
+}
+.cs-post-share ul li.google a {
+    background-color: #dd4b39
+}
+.cs-post-share ul li.pinterest a {
+    background-color: #cb2027
+}
+.cs-post-share ul li.tumblr a {
+    background-color: #32506d
+}
+.cs-post-share ul li.vk a {
+    background-color: #4c75a3
+}
+.cs-post-share ul li a {
+    display: block;
+    text-align: center;
+    line-height: 40px;
+    color: #fff;
+}
+.cs-post-share ul li a i + span {
+    margin-left: 4px
+}
+.cs-post-share ul li a:hover {
+    background-color: #000
+}
+.cs-post-single-review {
+    margin-bottom: 40px;
+    margin-right: 50px;
+    float: left;
+    width: 60%;
+}
+.cs-post-single-review .cs-review-item:before,
+.cs-post-single-review .cs-review-item:after {
+    content: " ";
+    display: table
+}
+.cs-post-single-review .cs-review-item:after {
+    clear: both
+}
+.cs-post-single-review .cs-review-item {
+    border: 1px solid #eee;
+    padding: 10px 15px;
+    margin-bottom: -1px;
+    background-color: #fbfbfb
+}
+.cs-post-single-review .cs-review-summary {
+    border: 1px solid #eee;
+    padding: 20px 15px;
+    display: table;
+    background-color: #fbfbfb
+}
+.cs-post-single-review .cs-summary-description,
+.cs-post-single-review .cs-summary-score {
+    display: table-cell;
+    vertical-align: middle;
+}
+.cs-post-single-review .cs-summary-description {
+    font-size: 14px;
+    line-height: 20px
+}
+.cs-post-single-review .cs-summary-description p:last-child {
+    margin: 0
+}
+.cs-post-single-review .cs-summary-score {
+    width: 150px;
+    text-align: center;
+}
+.cs-post-single-review .cs-summary-score .cs-post-rating {
+    font-size: 20px
+}
+.cs-post-single-review .cs-summary-score h5 {
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0
+}
+.cs-post-single-review .cs-review-item h5 {
+    float: left;
+    font-weight: 400;
+    font-size: 14px;
+    text-transform: uppercase;
+    line-height: 24px;
+    margin-bottom: 0
+}
+.cs-post-single-review .cs-post-rating {
+    position: static;
+    float: right;
+}
+.cs-post-single-content {
+    font-size: 16px;
+}
+.cs-post-single-content:before,
+.cs-post-single-content:after {
+    content: " ";
+    display: table
+}
+.cs-post-single-content:after {
+    clear: both
+}
+.cs-post-footer-meta {
+    font-size: 0;
+    text-transform: uppercase;
+}
+.cs-post-footer-meta span {
+    font-size: 10px;
+    padding: 5px 8px;
+    line-height: 1;
+    color: #fff;
+    display: inline-block;
+    border-width: 1px;
+    border-style: solid;
+    margin-right: 5px
+}
+.cs-post-footer-meta a {
+    font-size: 10px;
+    display: inline-block;
+    padding: 5px 8px;
+    letter-spacing: 1px;
+    line-height: 1;
+    margin-right: 5px;
+    border-width: 1px;
+    border-style: solid;
+}
+.cs-related-articles {
+    margin-bottom: 50px;
+}
+.cs-about-author {
+    border: 1px solid #eee;
+    padding: 25px;
+    background-color: #fbfbfb;
+    margin-bottom: 50px
+}
+.cs-about-author:before,
+.cs-about-author:after {
+    content: " ";
+    display: table
+}
+.cs-about-author:after {
+    clear: both
+}
+.cs-about-author .cs-author-avatar {
+    float: left;
+    margin-right: 30px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    width: 110px;
+}
+.cs-about-author .cs-author-avatar img {
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    width: 110px;
+    -webkit-transition: 0.2s;
+    -moz-transition: 0.2s;
+    -o-transition: 0.2s;
+    transition: 0.2s;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+.cs-about-author .cs-author-avatar:hover img {
+    opacity: 0.8
+}
+.cs-about-author .cs-author-info {
+    overflow: hidden;
+}
+.cs-about-author .cs-author-name {}
+.cs-about-author .cs-author-name h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+    line-height: 28px;
+}
+.cs-about-author .cs-author-name h3 a {
+    color: #000
+}
+.cs-about-author .cs-author-bio {
+    font-size: 14px;
+    line-height: 20px;
+}
+.cs-about-author .cs-author-social {}
+.cs-about-author .cs-author-social ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 0
+}
+.cs-about-author .cs-author-social ul li {
+    font-size: 12px;
+    float: left;
+    margin-right: 4px
+}
+.cs-about-author .cs-author-social ul li a {
+    display: block;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    border-style: solid;
+    border-width: 1px
+}
+#respond {
+    margin-bottom: 50px
+}
+#respond .cs-section-title {
+    margin-bottom: 20px
+}
+#respond span.required {
+    color: #f00
+}
+#respond .comment-form-author input,
+#respond .comment-form-email input,
+#respond .comment-form-url input {
+    width: 100%
+}
+#respond .comment-form-author,
+#respond .comment-form-email,
+#respond .comment-form-url {
+    width: 31.3%;
+    float: left;
+    margin-right: 3%
+}
+#respond .comment-form-url {
+    margin-right: 0
+}
+#respond .form-submit {
+    clear: both;
+}
+#respond .form-submit input[type="submit"] {
+    cursor: pointer;
+    border: 0;
+    color: #fff;
+    opacity: 0.9
+}
+#respond .form-submit input[type="submit"]:hover {
+    opacity: 1
+}
+
+/*------------------------------------------------------------------
+    17. Pages
+-------------------------------------------------------------------*/
+/*------------------------------------------------------------------
+    17.1 404 Page
+-------------------------------------------------------------------*/
+.cs-page-404 {
+    padding: 100px 0
+}
+.cs-page-404 h2 {
+    font-size: 160px;
+    font-weight: 700;
+    line-height: 1
+}
+.cs-page-404 h3 {
+}
+.cs-page-404 h4 {
+    font-weight: 400
+}
+.cs-page-404 form {
+    margin: 0;
+    padding: 20px 0 0 0
+}
+.cs-page-404 form input[type="search"],
+.cs-page-404 form input[type="submit"] {
+    display: inline-block;
+}
+.cs-page-404 form input[type="submit"] {
+    margin-left: 10px;
+    cursor: pointer;
+    padding: 10px 12px;
+    display: inline-block;
+    font-weight: normal;
+    outline: none;
+    position: relative;
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    min-width: 80px;
+    line-height: 20px;
+    text-align: center;
+    opacity: 0.9;
+    background-color: #000;
+    border: 0;
+}
+.cs-page-404 form input[type="submit"]:hover,
+.cs-page-404 form input[type="submit"]:active,
+.cs-page-404 form input[type="submit"]:focus {
+    opacity: 1;
+    color: #fff;
+    background-color: #000;
+    border: 0
+}
+
+/*------------------------------------------------------------------
+    17.2 Contact form
+-------------------------------------------------------------------*/
+.cs-contact-form {}
+.cs-contact-form form {}
+.cs-contact-form form input:not([type="submit"]) {
+    width: 100%
+}
+
+/*------------------------------------------------------------------
+    18. Shop (WooCommerce based)
+-------------------------------------------------------------------*/
+/*------------------------------------------------------------------
+    18.1 Shop category
+-------------------------------------------------------------------*/
+ul.products {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    clear: both;
+}
+ul.products:before,
+ul.products:after {
+    content: " ";
+    display: table
+}
+ul.products:after {
+    clear: both
+}
+ul.products li.product {
+    width: 100%;
+    list-style: none;
+    margin-bottom: 50px;
+    position: relative;
+    clear: none;
+    float: left;
+}
+ul.products li.product.first {
+    clear: both !important;
+}
+ul.products li.product.last {
+    margin-right: 0 !important
+}
+ul.products li.product img {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px
+}
+ul.products li.product h3 {
+    font-size: 17px;
+    line-height: 25px;
+    margin: 0 0 10px 0;
+    font-weight: 400
+}
+span.onsale {
+    position: absolute;
+    left: 15px;
+    top: 0;
+    background-color: #000;
+    color: #fff;
+    padding: 5px 8px;
+    line-height: 1;
+    font-size: 12px;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+.price del {
+    color: #999;
+    font-weight: 400
+}
+ul.products li.product .price ins {
+    font-weight: 700;
+    text-decoration: none;
+    background-color: transparent;
+    color: #000;
+    padding: 0
+}
+ul.products li.product .price {
+    display: block;
+    font-weight: 700;
+    font-size: 15px;
+    margin-bottom: 10px;
+    color: #000
+}
+ul.products li.product .button {
+    display: inline-block;
+    clear: both;
+    padding: 8px 13px;
+    margin: 0 0 5px 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1;
+    text-align: center;
+    outline: none;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    background-color: #222;
+    color: #fff;
+    position: relative;
+    border: 0;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s
+}
+ul.products li.product .button:hover {
+    background-color: #000
+}
+.star-rating {
+    font-family: 'FontAwesome';
+    letter-spacing: 1px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 15px;
+    height: 14px;
+    line-height: 14px;
+    font-size: 14px;
+    width: 70px;
+    white-space: nowrap;
+}
+.star-rating:before {
+    content: "\f006\f006\f006\f006\f006";
+    color: #000;
+    float: left;
+    top: 0;
+    left: 0;
+    position: absolute
+}
+.star-rating span {
+    overflow: hidden;
+    float: left;
+    top: 0;
+    left: 0;
+    position: absolute;
+    padding-top: 15px
+}
+.star-rating span:before {
+    content: "\f005\f005\f005\f005\f005";
+    color: #000;
+    top: 0;
+    position: absolute;
+    left: 0;
+}
+
+/*------------------------------------------------------------------
+    18.2 Shop single
+-------------------------------------------------------------------*/
+div.product {
+    position: relative;
+    overflow: hidden;
+}
+div.product .images {
+    width: 41.66666667%;
+    float: left;
+    margin-right: 4%;
+    margin-bottom: 50px;
+}
+div.product .images .woocommerce-main-image {
+    display: block;
+    margin-bottom: 3%;
+}
+div.product .images img {
+    width: 100%
+}
+div.product .images .thumbnails {
+    overflow: hidden;
+}
+div.product .images .thumbnails a {
+    width: 15%;
+    float: left;
+    display: block;
+    margin-bottom: 4%;
+    margin-right: 4%
+}
+div.product .summary {
+    width: 54.33333333%;
+    float: right;
+    margin-bottom: 50px;
+}
+div.product .price {
+    color: #000;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 26px
+}
+div.product .price del {
+    font-weight: 400;
+    color: #999
+}
+div.product .price ins {
+    text-decoration: none;
+    background-color: transparent;
+    padding: 0;
+    color: #000
+}
+div.product .price del + ins {
+    margin-left: 5px;
+}
+div.product form.cart {
+    margin-bottom: 25px;
+    overflow: hidden;
+}
+div.product form.cart .quantity {
+    float: left;
+}
+div.product form.cart .quantity input {
+    width: 100px;
+    text-align: center;
+}
+div.product form.cart .button {
+    cursor: pointer;
+    padding: 10px 15px;
+    display: inline-block;
+    float: right;
+    border: 0;
+    margin: 0;
+    font-weight: normal;
+    outline: none;
+    position: relative;
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    min-width: 80px;
+    line-height: 22px;
+    text-align: center;
+    opacity: 0.9
+}
+div.product form.cart .button:hover {
+    opacity: 1;
+    color: #fff
+}
+div.product form.cart .button:active {
+    top: 1px
+}
+div.product .product_meta {
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    font-size: 12px;
+    line-height: 20px
+}
+div.product .product_meta .posted_in,
+div.product .product_meta .sku_wrapper,
+div.product .product_meta .tagged_as {
+    display: block;
+}
+.woocommerce-tabs {
+    clear: both;
+    margin: 50px 0
+}
+.woocommerce-tabs table {
+    margin-bottom: 0
+}
+.woocommerce-tabs:before,
+.woocommerce-tabs:after {
+    content: " ";
+    display: table
+}
+.woocommerce-tabs:after {
+    clear: both
+}
+
+/*------------------------------------------------------------------
+    19. Footer
+-------------------------------------------------------------------*/
+#cs-footer {
+    background-color: #eee;
+}
+#cs-footer .cs-widget-area {
+    padding-top: 50px
+}
+#cs-footer .widget {
+    width: 22.75%;
+    float: left;
+    margin-right: 3%
+}
+#cs-footer .widget:last-child {
+    margin-right: 0;
+}
+#cs-footer .cs-copyright-area {
+    background-color: #000;
+    padding: 20px 0;
+    color: #bbb;
+    font-size: 13px;
+    line-height: 19px
+}
+#cs-footer .cs-copyright-area a {
+    color: #fff
+}
+#cs-footer .cs-copyright-area a:hover {
+    color: #fff
+}
+
+/*------------------------------------------------------------------
+    20. Responsive styles
+-------------------------------------------------------------------*/
+@media screen and (max-width: 1200px) {
+    body.cs-layout-framed #cs-page-wrapper {
+        margin-top: 0;
+        margin-bottom: 0
+    }
+}
+@media screen and (min-width: 1025px) {
+    .cs-offcanvas-wrap {
+        display: none !important
+    }
+    [class *= "cs-col"] {
+        float: left;
+    }
+    ul.products li.product {
+        padding-left: 15px;
+        padding-right: 15px;
+        width: 33.33333333%
+    }
+    ul.products {
+        margin-left: -15px;
+        margin-right: -15px
+    }
+}
+@media screen and (max-width: 1024px) {
+    [class *= "cs-col"] {
+        float: left;
+    }
+    .cs-main-content.cs-sidebar-on-the-right,
+    .cs-main-content.cs-sidebar-on-the-left,
+    .cs-main-content,
+    .cs-main-sidebar {
+        float: none;
+        width: 100%;
+        padding-right: 0;
+        padding-left: 0;
+        margin-bottom: 50px
+    }
+    .cs-main-sidebar {
+        margin-bottom: 0
+    }
+    .cs-big-slider .cs-post-title h3,
+    .cs-main-content:not(.cs-full-width) .cs-big-slider .cs-post-title h3 {
+        font-size: 30px;
+        line-height: 38px
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .cs-large-media .cs-post-title h1 {
+        font-size: 32px;
+        line-height: 40px
+    }
+    .cs-large-media .cs-post-subtitle h2 {
+        font-size: 20px;
+        line-height: 28px
+    }
+    .cs-post-single-header .cs-post-title h1 {
+        font-size: 28px;
+        line-height: 36px
+    }
+    .cs-offcanvas-wrap {
+        display: none !important
+    }
+    ul.products li.product {
+        padding-left: 15px;
+        padding-right: 15px;
+        width: 33.33333333%
+    }
+    .cs-divit-slider .gallery-top .cs-post-title h3 {
+        font-size: 32px;
+        line-height: 40px;
+    }
+    .cs-divit-slider .gallery-top .cs-post-item {
+        height: 500px
+    }
+    .cs-divit-slider .gallery-thumbs .cs-post-thumb {
+        width: 80px;
+    }
+    [data-slides-visible="2"] .cs-post-title h3 {
+        font-size: 24px;
+        line-height: 32px
+    }
+    [data-slides-visible="2"] .cs-post-excerpt,
+    [data-slides-visible="2"] .cs-post-icon {
+        display: none;
+    }
+    #cs-primary-nav nav > ul > li > a {
+        padding: 0 5px;
+        font-size: 12px
+    }
+    .cs-main-content:not(.cs-full-width) .cs-blog-list .cs-post-title h3,
+    .cs-blog-list .cs-post-title h3 {
+        font-size: 22px;
+        line-height: 30px;
+    }
+    .cs-main-content:not(.cs-full-width) .cs-blog-classic .cs-post-title h3,
+    .cs-blog-classic .cs-post-title h3 {
+        font-size: 28px;
+        line-height: 36px
+    }
+    .cs-main-content:not(.cs-full-width) .cs-blog-two-columns .cs-post-title h3,
+    .cs-blog-two-columns .cs-post-title h3 {
+        font-size: 22px;
+        line-height: 30px;
+    }
+    .cs-main-content:not(.cs-full-width) .cs-blog-three-columns .cs-post-title h3,
+    .cs-blog-three-columns .cs-post-title h3 {
+        font-size: 18px;
+        line-height: 26px;
+    }
+    .cs-blog-latest-videos .cs-post-item:not(:first-of-type) .cs-post-title h3,
+    .cs-main-content:not(.cs-full-width) .cs-blog-latest-videos .cs-post-item:not(:first-of-type) .cs-post-title h3 {
+        font-size: 16px;
+        line-height: 22px;
+    }
+}
+@media screen and (max-width: 767px) {
+    .cs-large-media .cs-post-details {
+        max-width: none
+    }
+    .cs-large-media .cs-post-title h1,
+    .cs-post-single-header .cs-post-title h1 {
+        font-size: 24px;
+        line-height: 32px;
+        margin-bottom: 0
+    }
+    .cs-large-media .cs-post-subtitle h2,
+    .cs-post-single-header .cs-post-subtitle h2 {
+        font-size: 18px;
+        line-height: 26px
+    }
+    ul.products li.product {
+        padding-left: 0;
+        padding-right: 0;
+        width: 100%;
+        display: block;
+        clear: both;
+    }
+    .cs-divit-slider .gallery-top .cs-post-title h3 {
+        font-size: 22px;
+        line-height: 30px;
+    }
+    .cs-divit-slider .gallery-top .cs-post-item {
+        height: 400px
+    }
+    .cs-divit-slider .gallery-thumbs .cs-post-thumb {
+        display: none;
+    }
+    .cs-divit-slider .gallery-thumbs .cs-post-title h3 {
+        font-size: 14px;
+        line-height: 22px
+    }
+    [data-slides-visible="2"] .cs-post-excerpt,
+    [data-slides-visible="2"] .cs-post-icon {
+        display: none;
+    }
+    [data-slides-visible="2"] .cs-post-title h3 {
+        font-size: 22px;
+        line-height: 28px
+    }
+    .cs-main-content:not(.cs-full-width) .cs-blog-list .cs-post-title h3,
+    .cs-blog-list .cs-post-title h3 {
+        font-size: 18px;
+        line-height: 26px;
+    }
+    .cs-main-content:not(.cs-full-width) .cs-blog-classic .cs-post-title h3,
+    .cs-blog-classic .cs-post-title h3 {
+        font-size: 22px;
+        line-height: 30px
+    }
+    .cs-main-content:not(.cs-full-width) .cs-blog-two-columns .cs-post-title h3,
+    .cs-blog-two-columns .cs-post-title h3 {
+        font-size: 18px;
+        line-height: 26px;
+    }
+    .cs-main-content:not(.cs-full-width) .cs-blog-mixed .cs-post-item:first-child .cs-post-title h3,
+    .cs-blog-mixed .cs-post-item:first-child .cs-post-title h3 {
+        font-size: 22px;
+        line-height: 30px;
+    }
+    .cs-blog-mixed .cs-post-item:not(:first-of-type) .cs-post-title h3 {
+        font-size: 16px;
+        line-height: 22px;
+    }
+    .cs-blog-mixed .cs-post-item {
+        width: 100%;
+        float: none;
+        padding-right: 0
+    }
+    .cs-main-content:not(.cs-full-width) .cs-blog-three-columns .cs-post-title h3,
+    .cs-blog-three-columns .cs-post-title h3 {
+        font-size: 16px;
+        line-height: 24px;
+    }
+    .cs-big-slider .cs-post-title h3,
+    .cs-main-content:not(.cs-full-width) .cs-big-slider .cs-post-title h3 {
+        font-size: 24px;
+        line-height: 32px
+    }
+    .cs-blog-list .cs-post-item {
+        margin-bottom: 30px
+    }
+    .cs-blog-list .cs-post-readmore {
+        display: none;
+    }
+    .cs-blog-latest-videos .cs-post-item:first-child .cs-post-details {
+        width: 100%;
+        max-width: none;
+    }
+    .cs-main-content:not(.cs-full-width) .cs-blog-mixed .cs-post-item:first-child .cs-post-title h3,
+    .cs-blog-latest-videos .cs-post-item:not(:first-of-type) .cs-post-title h3 {
+        font-size: 14px;
+        line-height: 20px;
+    }
+    [class *= "cs-col"] {
+        width: 100%
+    }
+    .alignright,
+    .alignleft {
+        display: block;
+        clear: both;
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0
+    }
+    blockquote {
+        width: 100% !important
+    }
+    #cs-primary-nav,
+    .cs-header-banner {
+        display: none !important
+    }
+    .cs-toggle-mobile-nav,
+    .cs-toggle-mobile-search {
+        display: block;
+    }
+    #cs-main-header #cs-header-components {
+        padding: 20px 0;
+        -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.1);
+        -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.1);
+        box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.1);
+    }
+    #cs-main-header.cs-header-layout-1.cs-header-image #cs-header-components {
+        padding: 20px 0;
+        background-image: none;
+    }
+    #cs-main-header.cs-header-layout-1 #cs-header-components #cs-site-logo,
+    #cs-main-header.cs-header-layout-2 #cs-header-components #cs-site-logo {
+        text-align: center;
+        padding: 0 25px;
+        margin: 0;
+        float: none;
+        display: block;
+    }
+    #cs-main-header.cs-header-layout-1 #cs-header-components #cs-site-logo img,
+    #cs-main-header.cs-header-layout-2 #cs-header-components #cs-site-logo img {
+        height: 35px;
+    }
+    #cs-footer .widget {
+        width: 100%;
+        display: block;
+        float: none;
+        clear: both;
+        margin-bottom: 30px
+    }
+    div.product .summary,
+    div.product .images {
+        margin-right: 0;
+        width: 100%;
+        display: block;
+        clear: both;
+        float: none;
+    }
+    .cs-page-404 {
+        padding: 50px 0
+    }
+    .cs-page-404 h2 {
+        font-size: 80px;
+    }
+    .cs-page-404 h3 {
+        font-size: 20px;
+        line-height: 28px;
+    }
+    .cs-page-404 h4 {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 26px
+    }
+}
+@media screen and (max-width: 580px) {
+    #respond .comment-form-author,
+    #respond .comment-form-email,
+    #respond .comment-form-url {
+        display: block;
+        float: none;
+        clear: both;
+        margin-right: 0;
+        width: 100%
+    }
+    .cs-about-author .cs-author-avatar {
+        display: none;
+    }
+    .cs-about-author .cs-author-info {
+        overflow: visible;
+    }
+    .cs-post-single-header .cs-post-title h1 {
+        font-size: 20px;
+        line-height: 28px;
+        margin-bottom: 0
+    }
+    .cs-large-media .cs-post-title h1,
+    .cs-post-single-header .cs-post-subtitle h2 {
+        font-size: 16px;
+        line-height: 24px
+    }
+    .cs-large-media .cs-post-subtitle h2 {
+        display: none;
+    }
+    .cs-post-single-review .cs-summary-description,
+    .cs-post-single-review .cs-summary-score {
+        display: block;
+    }
+    .cs-post-single-review .cs-review-summary {
+        text-align: center;
+    }
+    .cs-post-single-review .cs-summary-score .cs-post-rating {
+        text-align: center;
+    }
+    .cs-post-single-review .cs-summary-score {
+        display: inline-block;
+        width: auto;
+        margin-top: 10px
+    }
+    .cs-post-single-review .cs-summary-score .cs-post-rating > div {
+        display: inline-block;
+    }
+    .cs-post-single-review {
+        margin-bottom: 30px;
+        margin-right: 0;
+        float: none;
+        display: block;
+        clear: both;
+        width: 100%
+    }
+    .cs-post-share ul li a span {
+        display: none;
+    }
+    .cs-divit-slider .gallery-top .cs-post-title h3 {
+        font-size: 18px;
+        line-height: 26px;
+    }
+    .cs-divit-slider .gallery-top .cs-post-item {
+        height: 300px
+    }
+    .cs-divit-slider .gallery-thumbs {
+        display: none;
+    }
+    .cs-divit-slider .gallery-top .cs-post-details {
+        margin-top: 0;
+        padding: 0 40px
+    }
+    .cs-big-slider .cs-post-title h3,
+    .cs-main-content:not(.cs-full-width) .cs-big-slider .cs-post-title h3 {
+        font-size: 18px;
+        line-height: 22px
+    }
+    .cs-big-slider .cs-post-rating,
+    .cs-big-slider .cs-post-details > .cs-clearfix {
+        display: none;
+    }
+    .cs-blog-latest-videos .cs-post-item:not(:first-of-type),
+    .cs-main-content:not(.cs-full-width) .cs-blog-latest-videos .cs-post-item:not(:first-of-type),
+    .cs-main-content:not(.cs-full-width) .cs-blog-two-columns .cs-post-item,
+    .cs-blog-two-columns .cs-post-item,
+    .cs-main-content:not(.cs-full-width) .cs-blog-three-columns .cs-post-item,
+    .cs-blog-three-columns .cs-post-item {
+        width: 100%;
+        float: none;
+        display: block;
+        margin-right: 0;
+    }
+    .cs-blog-latest-videos .cs-post-item:not(:first-of-type),
+    .cs-main-content:not(.cs-full-width) .cs-blog-latest-videos .cs-post-item:not(:first-of-type) {
+        margin-bottom: 25px
+    }
+    .cs-blog-latest-videos .cs-post-item:first-child .cs-post-details .cs-post-excerpt {
+        display: none;
+    }
+    .cs-blog-latest-videos .cs-post-item:first-child .cs-post-title h3 {
+        font-size: 20px;
+        line-height: 28px
+    }
+    .cs-blog-classic .cs-post-thumb,
+    .cs-blog-list .cs-post-thumb {
+        width: 100%;
+        display: block;
+        float: none;
+        margin-bottom: 10px
+    }
+    .cs-blog-classic .cs-post-title,
+    .cs-blog-list .cs-post-title,
+    .cs-blog-two-columns .cs-post-title {
+        margin: 5px 0
+    }
+    .cs-blog-three-columns .cs-post-title {
+        margin-top: 0
+    }
+    .cs-blog-classic .cs-post-item,
+    .cs-blog-list .cs-post-item,
+    .cs-blog-two-columns .cs-post-item {
+        margin-bottom: 10px;
+    }
+    .cs-section-wrapper.with-padding .cs-blog-three-columns:last-child .cs-post-item:nth-last-of-type(-n+3),
+    .cs-blog-three-columns .cs-post-item {
+        margin-bottom: 15px;
+    }
+    .cs-blog-two-columns .cs-post-item.first,
+    .cs-blog-two-columns .cs-post-item.last {
+        clear: both;
+    }
+    .cs-section-wrapper.with-padding .cs-blog-list:last-child .cs-post-item:last-child {
+        margin-bottom: 0
+    }
+    .cs-main-content:not(.cs-full-width) .cs-blog-classic .cs-post-title h3,
+    .cs-blog-classic .cs-post-title h3 {
+        font-size: 18px;
+        line-height: 26px
+    }
+    .cs-main-content:not(.cs-full-width) .cs-blog-mixed .cs-post-item:first-child .cs-post-title h3,
+    .cs-blog-mixed .cs-post-item:first-child .cs-post-title h3 {
+        font-size: 18px;
+        line-height: 26px;
+    }
+    .cs-blog-mixed .cs-post-item:not(:first-of-type) .cs-post-title h3 {
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .cs-blog-classic .cs-post-readmore,
+    .cs-blog-two-columns .cs-post-readmore {
+        display: none;
+    }
+    .cs-main-content:not(.cs-full-width) .cs-blog-list .cs-post-title h3,
+    .cs-blog-list .cs-post-title h3 {
+        font-size: 18px;
+        line-height: 26px;
+    }
+}

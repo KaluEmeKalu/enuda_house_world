@@ -1,0 +1,64 @@
+/*------------------------------------------------------------------
+
+@Author: CodeoStudio
+@URL:    http://codeostudio.hr/
+
+[Table of contents]
+1. Text color
+2. Background color
+3. Border color
+
+-------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+    1. Text color
+-------------------------------------------------------------------*/
+a,
+.cs-post-title h3 a:hover,
+blockquote p cite,
+.widget_tag_cloud .tagcloud a:hover,
+.widget_product_tag_cloud .tagcloud a:hover,
+.cs-post-rating .cs-stars-color,
+.cs-post-rating .cs-stars-active-color {
+	color: #b6a881
+}
+
+/*------------------------------------------------------------------
+    2. Background color
+-------------------------------------------------------------------*/
+mark,
+.cs-btn,
+.cs-post-thumb,
+#cs-primary-nav nav > ul > li > a:hover,
+#cs-primary-nav nav > ul > li.current-menu-item > a,
+#cs-primary-nav nav > ul > li:hover > a,
+#cs-main-header.cs-header-layout-2.cs-header-colored #cs-header-components,
+#cs-main-header.cs-header-layout-1.cs-nav-colored .cs-header-inner-sticky,
+.widget_email_subscribe form input[type="submit"],
+.widget_email_subscribe form input[type="submit"]:focus,
+#respond .form-submit input[type="submit"],
+.widget-title h4:after,
+.cs-post-categories h5 a,
+.cs-section-title h3:after,
+.swiper-scrollbar-drag,
+ul.page-numbers li span.current,
+ul.page-numbers li a:hover,
+.cs-post-footer-meta span,
+div.product form.cart .button,
+.widget_shopping_cart .buttons .button,
+blockquote {
+	background-color: #b6a881
+}
+
+/*------------------------------------------------------------------
+    3. Border color
+-------------------------------------------------------------------*/
+pre,
+#cs-main-header.cs-header-layout-1.cs-nav-light.cs-header-light #cs-primary-nav,
+.cs-post-readmore a,
+.cs-section-title a,
+.cs-divit-slider .gallery-thumbs .swiper-slide-active,
+.cs-post-footer-meta a,
+.cs-post-footer-meta span {
+	border-color: #b6a881
+}
