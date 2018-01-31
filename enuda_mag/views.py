@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .forms import BlogPostForm
+from . import models
 
 # Create your views here.
 def index(request):
@@ -7,7 +8,9 @@ def index(request):
 
 
 def post_detail(request):
-    return render(request, 'enuda_mag/post_detail.html')
+    first_blog = models.BlogPost.objects.first()
+    context = {'first_blog', first_blog}
+    return render(request, 'enuda_mag/post_detail.html', context)
 
 
 def post_edit(request):
