@@ -38,6 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'enuda_mag',
+    'tinymce',
+    'imagekit',
+    'widget_tweaks',
+    'tracking',
 ]
 
 MIDDLEWARE = [
