@@ -9,7 +9,7 @@ def index(request):
 
 def post_detail(request):
     first_blog = models.BlogPost.objects.first()
-    context = {'first_blog', first_blog}
+    context = {'first_blog': first_blog}
     return render(request, 'enuda_mag/post_detail.html', context)
 
 
