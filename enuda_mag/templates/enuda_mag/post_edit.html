@@ -3,7 +3,7 @@
 
 
 {% block content %}
-    <form method="POST" class="post-form">{% csrf_token %}
+    <form  enctype="multipart/form-data" action="{% url 'enuda_mag:post_edit' %}" method="post" class="post-form">{% csrf_token %}
         <button type="submit" class="save btn btn-default">Save</button>
         {{ form.as_p }}
         <button type="submit" class="save btn btn-default">Save</button>
