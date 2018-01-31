@@ -6,6 +6,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^', include('enuda_mag.urls')),
+    url(r'^tinymce/', include('tinymce.urls')),
 ]
 
 if settings.DEBUG:

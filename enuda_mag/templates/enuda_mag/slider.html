@@ -1,0 +1,123 @@
+{% load static %}
+<!-- Divit slider -->
+<div class="cs-divit-slider">
+    <!-- Swiper -->
+    <div class="swiper-container gallery-top">
+        <div class="swiper-wrapper">
+            <!-- Post slide -->
+            <div class="swiper-slide">
+                <!-- Post item -->
+                <div class="cs-post-item" style="background-image: url({% static 'enuda_mag/demo/divit-slider/3.jpg' %});">
+                    <div class="cs-post-details">
+                        <div class="cs-clearfix">
+                            <div class="cs-post-categories">
+                                <h5><a href="blog-category-list.html">Travel</a></h5>
+                            </div>
+                            <div class="cs-post-meta"> 
+                                <span><a href="{% url 'enuda_mag:post_detail' %}"><i class="fa fa-clock-o" aria-hidden="true"></i> Sep 4, 2017</a></span>
+                                <span><a href="{% url 'enuda_mag:post_detail' %}"><i class="fa fa-comments" aria-hidden="true"></i> 13 Comments</a></span>
+                                <span><a href="{% url 'enuda_mag:post_detail' %}"><i class="fa fa-bolt" aria-hidden="true"></i> 956 Views</a></span>
+                            </div>
+                        </div>
+                        <div class="cs-post-title">
+                            <h3><a href="{% url 'enuda_mag:post_detail' %}">Kalu Kalu Speaks On How To Transform a Nation</a></h3>
+                        </div>
+                    </div>
+                </div><!-- end .cs-post-item -->
+            </div><!-- end .swiper-slide -->
+            <!-- Post slide -->
+            <div class="swiper-slide">
+                <!-- Post item -->
+                <div class="cs-post-item" style="background-image: url({% static 'enuda_mag/demo/divit-slider/2.jpg' %});">
+                    <div class="cs-post-details">
+                        <div class="cs-clearfix">
+                            <div class="cs-post-categories">
+                                <h5><a href="blog-category-list.html">Music</a></h5>
+                            </div>
+                            <div class="cs-post-meta"> 
+                                <span><a href="{% url 'enuda_mag:post_detail' %}"><i class="fa fa-clock-o" aria-hidden="true"></i> Oct 4, 2017</a></span>
+                                <span><a href="{% url 'enuda_mag:post_detail' %}"><i class="fa fa-comments" aria-hidden="true"></i> 0 Comments</a></span>
+                                <span><a href="{% url 'enuda_mag:post_detail' %}"><i class="fa fa-bolt" aria-hidden="true"></i> 569 Views</a></span>
+                            </div>
+                        </div>
+                        <div class="cs-post-title">
+                            <h3><a href="{% url 'enuda_mag:post_detail' %}">Watch Yankees' Judge Break Slump With 36th Home Run</a></h3>
+                        </div>
+                    </div>
+                </div><!-- end .cs-post-item -->
+            </div><!-- end .swiper-slide -->
+            <!-- Post slide -->
+            <div class="swiper-slide">
+                <!-- Post item -->
+                <div class="cs-post-item" style="background-image: url({% static 'enuda_mag/demo/divit-slider/1.jpg' %});">
+                    <div class="cs-post-details">
+                        <div class="cs-clearfix">
+                            <div class="cs-post-categories">
+                                <h5><a href="blog-category-list.html">Lifestyle</a></h5>
+                            </div>
+                            <div class="cs-post-meta"> 
+                                <span><a href="{% url 'enuda_mag:post_detail' %}"><i class="fa fa-clock-o" aria-hidden="true"></i> Jul 9, 2017</a></span>
+                                <span><a href="{% url 'enuda_mag:post_detail' %}"><i class="fa fa-comments" aria-hidden="true"></i> 98 Comments</a></span>
+                                <span><a href="{% url 'enuda_mag:post_detail' %}"><i class="fa fa-bolt" aria-hidden="true"></i> 36 Views</a></span>
+                            </div>
+                        </div>
+                        <div class="cs-post-title">
+                            <h3><a href="{% url 'enuda_mag:post_detail' %}">Everything Arsene Wenger Had to Say After Arsenal Win</a></h3>
+                        </div>
+                    </div>
+                </div><!-- end .cs-post-item -->
+            </div><!-- end .swiper-slide -->
+        </div>
+        <!-- Arrows -->
+        <div class="swiper-button-prev"><i class="fa fa-angle-left" aria-hidden="true"></i></div>
+        <div class="swiper-button-next"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
+    </div>
+    <div class="cs-thumbs-overlay">
+        <div class="swiper-container gallery-thumbs">
+            <div class="swiper-wrapper">
+                <!-- Thumb slide -->
+                <div class="swiper-slide">
+                    <!-- Post slide -->
+                    <div class="cs-post-item">
+                        <div class="cs-post-thumb">
+                            <img src="{% static 'enuda_mag/demo/divit-slider/3-thumb.jpg' %}" alt="Divit">
+                        </div>
+                        <div class="cs-post-details">
+                            <div class="cs-post-title">
+                                <h3>Williams Addresses Racism and Feminism in New Interview</h3>
+                            </div>
+                        </div>
+                    </div><!-- end .swiper-slide -->
+                </div><!-- end .swiper-slide -->
+                <!-- Thumb slide -->
+                <div class="swiper-slide">
+                    <!-- Post slide -->
+                    <div class="cs-post-item">
+                        <div class="cs-post-thumb">
+                            <img src="{% static 'enuda_mag/demo/divit-slider/2-thumb.jpg' %}" alt="Divit">
+                        </div>
+                        <div class="cs-post-details">
+                            <div class="cs-post-title">
+                                <h3>Watch Yankees' Judge Break Slump With 36th Home Run</h3>
+                            </div>
+                        </div>
+                    </div><!-- end .swiper-slide -->
+                </div><!-- end .swiper-slide -->
+                <!-- Thumb slide -->
+                <div class="swiper-slide">
+                    <!-- Post slide -->
+                    <div class="cs-post-item">
+                        <div class="cs-post-thumb">
+                            <img src="{% static 'enuda_mag/demo/divit-slider/1-thumb.jpg' %}" alt="Divit">
+                        </div>
+                        <div class="cs-post-details">
+                            <div class="cs-post-title">
+                                <h3>Everything Arsene Wenger Had to Say After Arsenal Win</h3>
+                            </div>
+                        </div>
+                    </div><!-- end .swiper-slide -->
+                </div><!-- end .swiper-slide -->
+            </div>
+        </div>
+    </div>
+</div><!-- end .cs-divit-slider -->

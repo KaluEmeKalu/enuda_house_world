@@ -38,12 +38,12 @@ class NewVisitorTest(StaticLiveServerTestCase):
         post = self.browser.find_element_by_class_name('cs-post-meta')
         post = post.find_element_by_tag_name('a')
         url = post.get_property('href')
-        url.assertIn('post_detail')
+        self.assertIn('post_detail', url)
         post.click()
-        self.wait_for(lambda: self.assertEqual(
-            self.browser.find_element_by_css_selector('.comment-notes').text,
-            "Your email address will not be published."
-        ))
+        time.sleep(3)
+        comments = self.browser.find_element_by_css_selector(
+            '.comment-notes').text
+        self.assertIn("Your email address will not be published.", comments)
 
 
     def test_can_i_log_in(self):
