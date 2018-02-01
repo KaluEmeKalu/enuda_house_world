@@ -16,7 +16,7 @@ def post_detail(request):
 
 
 
-def post_edit(request):
+def post_create(request):
 
     if request.method == 'POST':
         form = BlogPostForm(request.POST, request.FILES)
@@ -25,4 +25,4 @@ def post_edit(request):
             blog_post = form.save()
             return redirect('enuda_mag:post_detail')
 
-    return render(request, 'enuda_mag/post_edit.html', {'form': BlogPostForm()})
+    return render(request, 'enuda_mag/post_create.html', {'form': BlogPostForm()})

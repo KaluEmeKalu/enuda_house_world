@@ -5,7 +5,7 @@ app_name = 'enuda_mag'
 urlpatterns = [
     url(r'^$', views.index, name='home'),
     url(r'^post_detail/$', views.post_detail, name='post_detail'),
-    url(r'^post_edit/$', views.post_edit, name='post_edit'),
+    url(r'^post_create/$', views.post_create, name='post_create'),
 
 ]
 
