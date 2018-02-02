@@ -5,6 +5,18 @@ from enuda_mag import models
 from django.core.files.uploadedfile import SimpleUploadedFile
 
 
+def create_test_blog_post():
+    first_blog_post = models.BlogPost()
+    first_blog_post.title = "Director Charles Martin Smith tells us the \
+                             inside story of the canine masterpiece"
+    first_blog_post.subtitle = "The case has come to define more about who \
+                                we were as Americans at the dawn of the \
+                                21st century—and how ugly we are."
+    first_blog_post.content = 'The first (ever) list blog post'
+    first_blog_post.save()
+    return first_blog_post
+
+
 class HomePageTest(TestCase):
 
     def test_uses_home_template(self):
@@ -30,6 +42,7 @@ class HomePageTest(TestCase):
 class PostDetailPageTest(TestCase):
 
     def test_uses_post_detail_template(self):
+        create_test_blog_post()
         response = self.client.get('/post_detail/')
         # import pdb; pdb.set_trace();
         self.assertTemplateUsed(response, 'enuda_mag/post_detail.html')
@@ -58,7 +71,7 @@ class BlogPostModelTest(TestCase):
         first_blog_post.subtitle = "The case has come to define more about who \
                                     we were as Americans at the dawn of the \
                                     21st century—and how ugly we are."
-        first_blog_post.content = 'The first (ever) list blog post'
+        first_blog_post.content = 'The first (ever) blog post'
         first_blog_post.save()
 
         # Making and Saving Image
@@ -103,6 +116,5 @@ class BlogPostModelTest(TestCase):
             test_image.image.path)
         self.assertEqual(first_saved_blog_post.content,
                          'The first (ever) list blog post')
-        self.assertEqual(second_saved_blog_post.content, 'Blog Post the second')
-
-
+        self.assertEqual(second_saved_blog_post.content,
+                         'Blog Post the second')

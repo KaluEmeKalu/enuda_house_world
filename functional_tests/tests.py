@@ -29,6 +29,24 @@ class NewVisitorTest(StaticLiveServerTestCase):
             delta=10
         )
 
+    def test_i_can_make_a_new_post(self):
+        import pdb; pdb.set_trace()
+        # Edith goes to the home page
+        url = self.live_server_url + "/post_create"
+        self.browser.get(url)
+
+        # She notices write some contents and clicks save
+        post = self.browser.find_element_by_class_name('cs-post-meta')
+        post = post.find_element_by_tag_name('a')
+        url = post.get_property('href')
+        self.assertIn('post_detail', url)
+        post.click()
+        time.sleep(3)
+        comments = self.browser.find_element_by_css_selector(
+            '.comment-notes').text
+        self.assertIn("Your email address will not be published.", comments)
+
+
     def test_can_i_click_post(self):
         # Edith goes to the home page
         self.browser.get(self.live_server_url)

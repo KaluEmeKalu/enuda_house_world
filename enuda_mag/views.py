@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .forms import BlogPostForm
 from . import models
 
+
 # Create your views here.
 def index(request):
     return render(request, 'enuda_mag/index.html')
@@ -13,7 +14,6 @@ def post_detail(request):
     print(first_blog.content)
     context = {'first_blog': first_blog}
     return render(request, 'enuda_mag/post_detail.html', context)
-
 
 
 def post_create(request):
