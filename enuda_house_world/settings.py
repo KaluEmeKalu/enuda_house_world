@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'imagekit',
     'widget_tweaks',
     'tracking',
+    'mediumeditor',
 ]
 
 MIDDLEWARE = [

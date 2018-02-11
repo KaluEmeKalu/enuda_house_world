@@ -19,3 +19,11 @@ class BlogPost(TimeStampBaseModel):
     image = models.ForeignKey(Image, null=True, blank=True,
                               on_delete=models.SET_NULL,
                               related_name="blog_posts")
+    content2 = models.TextField(null=True, blank=True)
+
+
+    def __str__(self):
+        if self.title:
+            return self.title
+        return 'Created on {}. Sorry we have no title.'.format(
+            self.get_date())

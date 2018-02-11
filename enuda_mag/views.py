@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .forms import BlogPostForm
+from .forms import BlogPostForm, PostForm
 from . import models
 
 
@@ -13,8 +13,15 @@ def post_detail(request):
 
     print(first_blog.content)
     context = {'first_blog': first_blog}
+    if request.method == "POST":
+        form = PostForm(data=request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            return redirect('enuda_mag:post_detail')
+    else:
+        form = PostForm()
+        context['form'] = form
     return render(request, 'enuda_mag/post_detail.html', context)
-
 
 def post_create(request):
 
@@ -26,3 +33,14 @@ def post_create(request):
             return redirect('enuda_mag:post_detail')
 
     return render(request, 'enuda_mag/post_create.html', {'form': BlogPostForm()})
+
+
+def post_create_test(request):
+    if request.method == "POST":
+        form = PostForm(data=request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            return redirect('enuda_mag:post_detail')
+    else:
+        form = PostForm()
+    return render(request, 'enuda_mag/post_create.html', {'form': form})

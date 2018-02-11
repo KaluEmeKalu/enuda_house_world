@@ -47,6 +47,10 @@ class TimeStampBaseModel(Model):
         editable=False, auto_now_add=True, auto_now=False)
     updated = DateTimeField(auto_now=True, blank=True, null=True)
 
+    def get_date(self):
+        date = self.timestamp.strftime("%A, %d. %B %Y %I:%M%p")
+        return date
+
     def time_ago(self):
         return naturaltime(self.timestamp)
 
@@ -76,6 +80,11 @@ class NameTimeStampBaseModel(Model):
     timestamp = DateTimeField(
         editable=False, auto_now_add=True, auto_now=False)
     updated = DateTimeField(auto_now=True, blank=True, null=True)
+
+    def get_date(self):
+        date = self.timestamp.strftime("%A, %d. %B %Y %I:%M%p")
+        return date
+
 
     def time_ago(self):
         return naturaltime(self.timestamp)
