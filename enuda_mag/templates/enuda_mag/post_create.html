@@ -5,12 +5,10 @@
 {{form.media}}
 {% endblock %}
 
-{% block content %}
+{% block blank %}
     <form  enctype="multipart/form-data" action="{% url 'enuda_mag:post_create' %}" method="post" class="post-form">{% csrf_token %}
         <button type="submit" class="save btn btn-default">Save</button>
         <div class="row">
-		  <div class="col-md-1">Title</div>
-		  <div class="col-md-1">{{form.title}}</div>
 		</div>
         {{ form.as_p }}
         <button type="submit" class="save btn btn-default">Save</button>

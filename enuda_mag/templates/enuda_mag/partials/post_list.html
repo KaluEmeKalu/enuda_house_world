@@ -1,0 +1,26 @@
+{% load static %}
+<div class="widget widget_post_list">
+    <div class="widget-title"><h4>Posts list</h4></div>
+    <ul>
+        {% for blog_post in blog_posts %}
+        <li>
+            
+            <div class="cs-post-item">
+                <div id="test-cs-post-thumb" class="cs-post-thumb">
+                    <a href="#"><img src="{{ blog_post.image.thumbnail.url }}" %}" alt="Divit"></a>
+                </div>
+                <div class="cs-post-details">
+                    <div class="cs-post-title">
+                        <h3><a href="{% url 'enuda_mag:post_detail' slug=blog_post.slug %}">{{blog_post.title}}</a></h3>
+                    </div>
+                    <div class="cs-clearfix">
+                        <div class="cs-post-meta">
+                            <span><a href="{% url 'enuda_mag:post_detail' slug=blog_post.slug %}"><i class="fa fa-comments" aria-hidden="true"></i>{{blog_post.comments.all.count}} Comments</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</div><!-- end .widget_post_list -->

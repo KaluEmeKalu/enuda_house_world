@@ -24,10 +24,10 @@
                         </div>
                     </div>
                     <div class="cs-post-title">
-                        <h1>Director Charles Martin Smith tells us the inside story of the canine masterpiece</h1>
+                        <h1>{{blog_post.title | safe}}</h1>
                     </div>
                     <div class="cs-post-subtitle">
-                        <h2>The case has come to define more about who we were as Americans at the dawn of the 21st century—and how ugly we are.</h2>
+                        <h2>{{blog_post.subtitle | safe}}</h2>
                     </div>
                     <div class="cs-post-share">
                         <ul>
@@ -48,7 +48,7 @@
                 <div class="cs-post-single-content">
                     <!-- Post review -->
                     <!-- end .cs-post-single-review -->
-                    <p class="cs-dropcap">fdfdfd{{first_blog.content | safe }}</p>
+                    <p class="cs-dropcap">{{blog_post.content | safe }}</p>
                 </div><!-- end .cs-post-single-content -->
                 <!-- Post footer -->
                 <div class="cs-post-footer">
@@ -189,30 +189,22 @@
                     <div class="cs-section-title">
                         <h3>Leave a Comment</h3>
                     </div><!-- end .cs-section-title -->
-                    <form>
+                    <form enctype="multipart/form-data" action="{% url 'enuda_mag:create_comment' blog_post=blog_post.id %}" method="post">
+                        {% csrf_token %}
                         <p class="comment-notes">
                             <span>Your email address will not be published.</span> Required fields are marked <span class="required">*</span>
                         </p>
                         <p class="comment-form-comment">
                             <label>Comment <span class="required">*</span></label>
-                            <textarea placeholder="Your comment.."></textarea>
-                        </p>
-                        <p class="comment-form-author">
-                            <label>Name <span class="required">*</span></label>
-                            <input type="text" placeholder="Name">
-                        </p>
-                        <p class="comment-form-email">
-                            <label>E-mail <span class="required">*</span></label>
-                            <input type="text" placeholder="E-mail">
-                        </p>
-                        <p class="comment-form-url">
-                            <label>Website</label>
-                            <input type="text" placeholder="Website">
+                            <textarea name="content" placeholder="Your comment.."></textarea>
                         </p>
                         <p class="form-submit">
                             <input type="submit" value="Post a Comment">
                         </p>
                     </form>
+                    {% for comment in blog_post.comments.all %}
+                    <p>{{comment.user.username}}: {{comment.content | safe }}</p>
+                    {% endfor %}
                 </div><!-- end #respond -->
             </div><!-- end .cs-post-components -->
         </div><!-- end .cs-main-content -->
@@ -228,78 +220,9 @@
             </div><!-- end .widget_banner_300x250 -->
             <!-- Post widget -->
             <div class="widget widget_post_list">
-                <div class="widget-title"><h4>Latest posts</h4></div>
-                <ul>
-                    <li>
-                        <div class="cs-post-item">
-                            <div class="cs-post-thumb">
-                                <a href="post-regular.html"><img src="demo/sidebar/list-1.jpg" alt="Divit"></a>
-                            </div>
-                            <div class="cs-post-details">
-                                <div class="cs-post-title">
-                                    <h3><a href="post-regular.html">Starbucks's New Flavors Just As Bad As 'The Unicorn'</a></h3>
-                                </div>
-                                <div class="cs-clearfix">
-                                    <div class="cs-post-meta">
-                                        <span><a href="post-regular.html"><i class="fa fa-comments" aria-hidden="true"></i> 13 Comments</a></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="cs-post-item">
-                            <div class="cs-post-thumb">
-                                <a href="post-regular.html"><img src="demo/sidebar/list-2.jpg" alt="Divit"></a>
-                            </div>
-                            <div class="cs-post-details">
-                                <div class="cs-post-title">
-                                    <h3><a href="post-regular.html">Transfer News: Chelsea and Liverpool Fear Losing Star</a></h3>
-                                </div>
-                                <div class="cs-clearfix">
-                                    <div class="cs-post-meta">
-                                        <span><a href="post-regular.html"><i class="fa fa-comments" aria-hidden="true"></i> 98 Comments</a></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="cs-post-item">
-                            <div class="cs-post-thumb">
-                                <a href="post-regular.html"><img src="demo/sidebar/list-3.jpg" alt="Divit"></a>
-                            </div>
-                            <div class="cs-post-details">
-                                <div class="cs-post-title">
-                                    <h3><a href="post-regular.html">How Much Is Beyoncé Worth? Singer Wants to Buy NBA Team</a></h3>
-                                </div>
-                                <div class="cs-clearfix">
-                                    <div class="cs-post-meta">
-                                        <span><a href="post-regular.html"><i class="fa fa-comments" aria-hidden="true"></i> 13 Comments</a></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="cs-post-item">
-                            <div class="cs-post-thumb">
-                                <a href="post-regular.html"><img src="demo/sidebar/list-4.jpg" alt="Divit"></a>
-                            </div>
-                            <div class="cs-post-details">
-                                <div class="cs-post-title">
-                                    <h3><a href="post-regular.html">Arsenal Identify New Target After Missing Out on Lemar</a></h3>
-                                </div>
-                                <div class="cs-clearfix">
-                                    <div class="cs-post-meta">
-                                        <span><a href="post-regular.html"><i class="fa fa-comments" aria-hidden="true"></i> 158 Comments</a></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div><!-- end .widget_post_list -->
+                {% include "enuda_mag/partials/post_list.html" %}
+            </div>
+            <!-- end .widget_post_list -->
             <!-- Email widget -->
             <div class="widget widget_email_subscribe">
                 <div class="widget-title"><h4>Email subscribe</h4></div>

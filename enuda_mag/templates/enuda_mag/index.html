@@ -18,16 +18,17 @@
             <!-- Blog list -->
             <div class="cs-blog-list">
                 <!-- Post item -->
+                {% for blog_post in blog_posts %}
                 <div class="cs-post-item">
                     <div class="cs-post-thumb">
-                        <a href="{% url 'enuda_mag:post_detail' %}">
+                        <a href="#">
                             <div class="cs-post-rating" title="Rated 3.5 of 5">
                                 <div>
                                     <div class="cs-stars-color"></div>
                                     <div class="cs-stars-active-color" style="width: 70%"></div>
                                 </div>
                             </div>
-                            <img src="{% static 'enuda_mag/demo/blog/list-1.jpg' %}" alt="Divit">
+                            <img src="{{ blog_post.image.mid_size.url }}" alt="Divit">
                         </a>
                     </div>
                     <div class="cs-post-details">
@@ -36,92 +37,24 @@
                                 <h5><a href="blog-category-3-columns.html">Travel</a></h5>
                             </div>
                             <div class="cs-post-meta">                                
-                                <span><a href="page-author.html"><i class="fa fa-user" aria-hidden="true"></i> John Doe</a></span>
-                                <span><a href="{% url 'enuda_mag:post_detail' %}"><i class="fa fa-clock-o" aria-hidden="true"></i> Sep 4, 2017</a></span>
-                                <span><a href="{% url 'enuda_mag:post_detail' %}"><i class="fa fa-comments" aria-hidden="true"></i> 13</a></span>
-                                <span><a href="{% url 'enuda_mag:post_detail' %}"><i class="fa fa-bolt" aria-hidden="true"></i> 956</a></span>
+                                <span><a href="page-author.html"><i class="fa fa-user" aria-hidden="true"></i> {{blog_post.user.first_name}} {{blog_post.user.last_name}}</a></span>
+                                <span><a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i>{{blog_post.get_date}}</a></span>
+                                <span><a href="{% url 'enuda_mag:post_detail' slug=blog_post.slug %}"><i class="fa fa-comments" aria-hidden="true"></i> 13</a></span>
+                                <span><a href="#"><i class="fa fa-bolt" aria-hidden="true"></i> 956</a></span>
                             </div>
                         </div>
                         <div class="cs-post-title">
-                            <h3><a href="{% url 'enuda_mag:post_detail' %}">Should Los Angeles Be Celebrating Its Olympics Win?</a></h3>
+                            <h3><a href="{% url 'enuda_mag:post_detail' slug=blog_post.slug %}">{{blog_post.title | safe}}</a></h3>
                         </div>
                         <div class="cs-post-excerpt">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit euismod, mi in rhoncus rutrum, mi felis malesuada.</p>
+                            <p>{{blog_post.content | truncatechars:900 | safe}}</p>
                         </div>
                         <div class="cs-post-readmore">
-                            <a href="{% url 'enuda_mag:post_detail' %}"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
                         </div>
                     </div>
                 </div><!-- end .cs-post-item -->
-                <!-- Post item -->
-                <div class="cs-post-item">
-                    <div class="cs-post-thumb">
-                        <a href="{% url 'enuda_mag:post_detail' %}">
-                            <div class="cs-post-icon">
-                                <i class="fa fa-play" aria-hidden="true"></i>
-                            </div>
-                            <img src="{% static 'enuda_mag/demo/blog/list-2.jpg' %}" alt="Divit">
-                        </a>
-                    </div>
-                    <div class="cs-post-details">
-                        <div class="cs-clearfix">
-                            <div class="cs-post-categories">
-                                <h5><a href="blog-category-3-columns.html">Entertainment</a></h5>
-                            </div>
-                            <div class="cs-post-meta">                                
-                                <span><a href="page-author.html"><i class="fa fa-user" aria-hidden="true"></i> Kate S.</a></span>
-                                <span><a href="{% url 'enuda_mag:post_detail' %}"><i class="fa fa-clock-o" aria-hidden="true"></i> Jul 9, 2017</a></span>
-                                <span><a href="{% url 'enuda_mag:post_detail' %}"><i class="fa fa-comments" aria-hidden="true"></i> 3</a></span>
-                                <span><a href="{% url 'enuda_mag:post_detail' %}"><i class="fa fa-bolt" aria-hidden="true"></i> 32</a></span>
-                            </div>
-                        </div>
-                        <div class="cs-post-title">
-                            <h3><a href="{% url 'enuda_mag:post_detail' %}">Jose Mourinho Sends Transfer Message to Ed Woodward</a></h3>
-                        </div>
-                        <div class="cs-post-excerpt">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit euismod, mi in rhoncus rutrum, mi felis malesuada.</p>
-                        </div>
-                        <div class="cs-post-readmore">
-                            <a href="{% url 'enuda_mag:post_detail' %}"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                        </div>
-                    </div>
-                </div><!-- end .cs-post-item -->
-                <!-- Post item -->
-                <div class="cs-post-item">
-                    <div class="cs-post-thumb">
-                        <a href="{% url 'enuda_mag:post_detail' %}">
-                            <div class="cs-post-rating" title="Rated 4.5 of 5">
-                                <div>
-                                    <div class="cs-stars-color"></div>
-                                    <div class="cs-stars-active-color" style="width: 90%"></div>
-                                </div>
-                            </div>
-                            <img src="{% static 'enuda_mag/demo/blog/list-3.jpg' %}" alt="Divit">
-                        </a>
-                    </div>
-                    <div class="cs-post-details">
-                        <div class="cs-clearfix">
-                            <div class="cs-post-categories">
-                                <h5><a href="blog-category-3-columns.html">Games</a></h5>
-                            </div>
-                            <div class="cs-post-meta">                                
-                                <span><a href="page-author.html"><i class="fa fa-user" aria-hidden="true"></i> Tom R.</a></span>
-                                <span><a href="{% url 'enuda_mag:post_detail' %}"><i class="fa fa-clock-o" aria-hidden="true"></i> Jul 9, 2017</a></span>
-                                <span><a href="{% url 'enuda_mag:post_detail' %}"><i class="fa fa-comments" aria-hidden="true"></i> 87</a></span>
-                                <span><a href="{% url 'enuda_mag:post_detail' %}"><i class="fa fa-bolt" aria-hidden="true"></i> 9</a></span>
-                            </div>
-                        </div>
-                        <div class="cs-post-title">
-                            <h3><a href="{% url 'enuda_mag:post_detail' %}">LeBron James or Kobe Bryant? Michael Jordan Has His Say</a></h3>
-                        </div>
-                        <div class="cs-post-excerpt">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit euismod, mi in rhoncus rutrum, mi felis malesuada.</p>
-                        </div>
-                        <div class="cs-post-readmore">
-                            <a href="{% url 'enuda_mag:post_detail' %}"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                        </div>
-                    </div>
-                </div><!-- end .cs-post-item -->
+                {% endfor %}
             </div><!-- end .cs-blog-list -->
         </div><!-- end .cs-main-content -->
         <!-- Main sidebar -->
@@ -134,79 +67,8 @@
                 </form>
             </div><!-- end .widget_search -->
             <!-- Post widget -->
-            <div class="widget widget_post_list">
-                <div class="widget-title"><h4>Posts list</h4></div>
-                <ul>
-                    <li>
-                        <div class="cs-post-item">
-                            <div id="test-cs-post-thumb" class="cs-post-thumb">
-                                <a href="{% url 'enuda_mag:post_detail' %}"><img src="{% static 'enuda_mag/demo/sidebar/list-1.jpg' %}" alt="Divit"></a>
-                            </div>
-                            <div class="cs-post-details">
-                                <div class="cs-post-title">
-                                    <h3><a href="{% url 'enuda_mag:post_detail' %}">Starbucks's New Flavors Just As Bad As 'The Unicorn'</a></h3>
-                                </div>
-                                <div class="cs-clearfix">
-                                    <div class="cs-post-meta">
-                                        <span><a href="{% url 'enuda_mag:post_detail' %}"><i class="fa fa-comments" aria-hidden="true"></i> 13 Comments</a></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="cs-post-item">
-                            <div class="cs-post-thumb">
-                                <a href="{% url 'enuda_mag:post_detail' %}"><img src="{% static 'enuda_mag/demo/sidebar/list-2.jpg' %}" alt="Divit"></a>
-                            </div>
-                            <div class="cs-post-details">
-                                <div class="cs-post-title">
-                                    <h3><a href="{% url 'enuda_mag:post_detail' %}">Transfer News: Chelsea and Liverpool Fear Losing Star</a></h3>
-                                </div>
-                                <div class="cs-clearfix">
-                                    <div class="cs-post-meta">
-                                        <span><a href="{% url 'enuda_mag:post_detail' %}"><i class="fa fa-comments" aria-hidden="true"></i> 98 Comments</a></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="cs-post-item">
-                            <div class="cs-post-thumb">
-                                <a href="{% url 'enuda_mag:post_detail' %}"><img src="{% static 'enuda_mag/demo/sidebar/list-3.jpg' %}" alt="Divit"></a>
-                            </div>
-                            <div class="cs-post-details">
-                                <div class="cs-post-title">
-                                    <h3><a href="{% url 'enuda_mag:post_detail' %}">How Much Is Beyoncé Worth? Singer Wants to Buy NBA Team</a></h3>
-                                </div>
-                                <div class="cs-clearfix">
-                                    <div class="cs-post-meta">
-                                        <span><a href="{% url 'enuda_mag:post_detail' %}"><i class="fa fa-comments" aria-hidden="true"></i> 13 Comments</a></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="cs-post-item">
-                            <div class="cs-post-thumb">
-                                <a href="{% url 'enuda_mag:post_detail' %}"><img src="{% static 'enuda_mag/demo/sidebar/list-4.jpg' %}" alt="Divit"></a>
-                            </div>
-                            <div class="cs-post-details">
-                                <div class="cs-post-title">
-                                    <h3><a href="{% url 'enuda_mag:post_detail' %}">Arsenal Identify New Target After Missing Out on Lemar</a></h3>
-                                </div>
-                                <div class="cs-clearfix">
-                                    <div class="cs-post-meta">
-                                        <span><a href="{% url 'enuda_mag:post_detail' %}"><i class="fa fa-comments" aria-hidden="true"></i> 158 Comments</a></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div><!-- end .widget_post_list -->
+            {% include "enuda_mag/partials/post_list.html" %}
+            <!-- end .widget_post_list -->
         </div><!-- end .main-sidebar -->
     </div>
 </div><!-- end .cs-section-wrapper -->
@@ -230,11 +92,11 @@
                             <!-- Post item -->
                             <div class="cs-post-item">
                                 <div class="cs-post-thumb">
-                                    <a href="{% url 'enuda_mag:post_detail' %}">
+                                    <a href="#">
                                         <div class="cs-post-icon">
                                             <i class="fa fa-play" aria-hidden="true"></i>
                                         </div>
-                                        <img src="{% static 'enuda_mag/demo/carousel-slider/3.jpg' %}" alt="Divit">
+                                        <img src="{% static 'enuda_mag/demo/carousel-slider/1.jpg' %}" alt="Divit">
                                     </a>
                                 </div>
                                 <div class="cs-post-details">
@@ -243,11 +105,11 @@
                                             <h5><a href="blog-category-3-columns.html">Travel</a></h5>
                                         </div>
                                         <div class="cs-post-meta"> 
-                                            <span><a href="{% url 'enuda_mag:post_detail' %}"><i class="fa fa-clock-o" aria-hidden="true"></i> Sep 4, 2017</a></span>
+                                            <span><a href="{% static 'enuda_mag/demo/carousel-slider/2.jpg' %}"><i class="fa fa-clock-o" aria-hidden="true"></i> Sep 4, 2017</a></span>
                                         </div>
                                     </div>
                                     <div class="cs-post-title">
-                                        <h3><a href="{% url 'enuda_mag:post_detail' %}">The Secret Shame of People Who Have Bill Cosby Tattoos</a></h3>
+                                        <h3><a href="#">The Secret Shame of People Who Have Bill Cosby Tattoos</a></h3>
                                     </div>
                                 </div>
                             </div><!-- end .cs-post-item -->
@@ -257,7 +119,7 @@
                             <!-- Post item -->
                             <div class="cs-post-item">
                                 <div class="cs-post-thumb">
-                                    <a href="{% url 'enuda_mag:post_detail' %}">
+                                    <a href="#">
                                         <div class="cs-post-rating" title="Rated 4 of 5">
                                             <div>
                                                 <div class="cs-stars-color"></div>
@@ -273,11 +135,11 @@
                                             <h5><a href="blog-category-3-columns.html">Music</a></h5>
                                         </div>
                                         <div class="cs-post-meta"> 
-                                            <span><a href="{% url 'enuda_mag:post_detail' %}"><i class="fa fa-clock-o" aria-hidden="true"></i> Jul 18, 2017</a></span>
+                                            <span><a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i> Jul 18, 2017</a></span>
                                         </div>
                                     </div>
                                     <div class="cs-post-title">
-                                        <h3><a href="{% url 'enuda_mag:post_detail' %}">Durant Won't Let Anybody Say James Is Better Than Him</a></h3>
+                                        <h3><a href="#">Durant Won't Let Anybody Say James Is Better Than Him</a></h3>
                                     </div>
                                 </div>
                             </div><!-- end .cs-post-item -->
@@ -287,7 +149,7 @@
                             <!-- Post item -->
                             <div class="cs-post-item">
                                 <div class="cs-post-thumb">
-                                    <a href="{% url 'enuda_mag:post_detail' %}">
+                                    <a href="#">
                                         <img src="{% static 'enuda_mag/demo/carousel-slider/1.jpg' %}" alt="Divit">
                                     </a>
                                 </div>
@@ -297,11 +159,11 @@
                                             <h5><a href="blog-category-3-columns.html">Tv</a></h5>
                                         </div>
                                         <div class="cs-post-meta"> 
-                                            <span><a href="{% url 'enuda_mag:post_detail' %}"><i class="fa fa-clock-o" aria-hidden="true"></i> Dec 1, 2017</a></span>
+                                            <span><a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i> Dec 1, 2017</a></span>
                                         </div>
                                     </div>
                                     <div class="cs-post-title">
-                                        <h3><a href="{% url 'enuda_mag:post_detail' %}">Paris Looks Golden After LA Agrees On 2028 Games</a></h3>
+                                        <h3><a href="#">Paris Looks Golden After LA Agrees On 2028 Games</a></h3>
                                     </div>
                                 </div>
                             </div><!-- end .cs-post-item -->
@@ -311,7 +173,7 @@
                             <!-- Post item -->
                             <div class="cs-post-item">
                                 <div class="cs-post-thumb">
-                                    <a href="{% url 'enuda_mag:post_detail' %}">
+                                    <a href="#">
                                         <img src="{% static 'enuda_mag/demo/carousel-slider/4.jpg' %}" alt="Divit">
                                     </a>
                                 </div>
@@ -321,11 +183,11 @@
                                             <h5><a href="blog-category-3-columns.html">Food</a></h5>
                                         </div>
                                         <div class="cs-post-meta"> 
-                                            <span><a href="{% url 'enuda_mag:post_detail' %}"><i class="fa fa-clock-o" aria-hidden="true"></i> May 24, 2017</a></span>
+                                            <span><a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i> May 24, 2017</a></span>
                                         </div>
                                     </div>
                                     <div class="cs-post-title">
-                                        <h3><a href="{% url 'enuda_mag:post_detail' %}">James and Westbrook Are Working Out Together In Vegas</a></h3>
+                                        <h3><a href="#">James and Westbrook Are Working Out Together In Vegas</a></h3>
                                     </div>
                                 </div>
                             </div><!-- end .cs-post-item -->
@@ -349,7 +211,7 @@
                 <!-- Post item -->
                 <div class="cs-post-item first">
                     <div class="cs-post-thumb">
-                        <a href="{% url 'enuda_mag:post_detail' %}">
+                        <a href="#">
                             <div class="cs-post-icon">
                                 <i class="fa fa-play" aria-hidden="true"></i>
                             </div>
@@ -369,26 +231,26 @@
                             </div>
                             <div class="cs-post-meta">                                
                                 <span><a href="page-author.html"><i class="fa fa-user" aria-hidden="true"></i> John Doe</a></span>
-                                <span><a href="{% url 'enuda_mag:post_detail' %}"><i class="fa fa-clock-o" aria-hidden="true"></i> Sep 4, 2017</a></span>
-                                <span><a href="{% url 'enuda_mag:post_detail' %}"><i class="fa fa-comments" aria-hidden="true"></i> 13</a></span>
-                                <span><a href="{% url 'enuda_mag:post_detail' %}"><i class="fa fa-bolt" aria-hidden="true"></i> 956</a></span>
+                                <span><a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i> Sep 4, 2017</a></span>
+                                <span><a href="#"><i class="fa fa-comments" aria-hidden="true"></i> 13</a></span>
+                                <span><a href="#"><i class="fa fa-bolt" aria-hidden="true"></i> 956</a></span>
                             </div>
                         </div>
                         <div class="cs-post-title">
-                            <h3><a href="{% url 'enuda_mag:post_detail' %}">The Spaniard made his first appearance against Bayern Munich</a></h3>
+                            <h3><a href="#">The Spaniard made his first appearance against Bayern Munich</a></h3>
                         </div>
                         <div class="cs-post-excerpt">
                             <p>Vestibulum bibendum arcu nec sagittis efficitur. Etiam eget lacus tincidunt, ultricies dui quis.</p>
                         </div>
                         <div class="cs-post-readmore">
-                            <a href="{% url 'enuda_mag:post_detail' %}"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
                         </div>
                     </div>
                 </div><!-- end .cs-post-item -->
                 <!-- Post item -->
                 <div class="cs-post-item last">
                     <div class="cs-post-thumb">
-                        <a href="{% url 'enuda_mag:post_detail' %}">
+                        <a href="#">
                             <img src="{% static 'enuda_mag/demo/blog/column-2.jpg' %}" alt="Divit">
                         </a>
                     </div>
@@ -400,26 +262,26 @@
                             </div>
                             <div class="cs-post-meta">                                
                                 <span><a href="page-author.html"><i class="fa fa-user" aria-hidden="true"></i> Smith R.</a></span>
-                                <span><a href="{% url 'enuda_mag:post_detail' %}"><i class="fa fa-clock-o" aria-hidden="true"></i> Sep 4, 2017</a></span>
-                                <span><a href="{% url 'enuda_mag:post_detail' %}"><i class="fa fa-comments" aria-hidden="true"></i> 13</a></span>
-                                <span><a href="{% url 'enuda_mag:post_detail' %}"><i class="fa fa-bolt" aria-hidden="true"></i> 956</a></span>
+                                <span><a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i> Sep 4, 2017</a></span>
+                                <span><a href="#"><i class="fa fa-comments" aria-hidden="true"></i> 13</a></span>
+                                <span><a href="#"><i class="fa fa-bolt" aria-hidden="true"></i> 956</a></span>
                             </div>
                         </div>
                         <div class="cs-post-title">
-                            <h3><a href="{% url 'enuda_mag:post_detail' %}">Bruce Arena's team beat Costa Rica to reach the final in Santa Clara</a></h3>
+                            <h3><a href="#">Bruce Arena's team beat Costa Rica to reach the final in Santa Clara</a></h3>
                         </div>
                         <div class="cs-post-excerpt">
                             <p>Vestibulum bibendum arcu nec sagittis efficitur. Etiam eget lacus tincidunt, ultricies dui quis.</p>
                         </div>
                         <div class="cs-post-readmore">
-                            <a href="{% url 'enuda_mag:post_detail' %}"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
                         </div>
                     </div>
                 </div><!-- end .cs-post-item -->
                 <!-- Post item -->
                 <div class="cs-post-item first">
                     <div class="cs-post-thumb">
-                        <a href="{% url 'enuda_mag:post_detail' %}">
+                        <a href="#">
                             <div class="cs-post-rating" title="Rated 5 of 5">
                                 <div>
                                     <div class="cs-stars-color"></div>
@@ -436,26 +298,26 @@
                             </div>
                             <div class="cs-post-meta">                                
                                 <span><a href="page-author.html"><i class="fa fa-user" aria-hidden="true"></i> James K.</a></span>
-                                <span><a href="{% url 'enuda_mag:post_detail' %}"><i class="fa fa-clock-o" aria-hidden="true"></i> Sep 4, 2017</a></span>
-                                <span><a href="{% url 'enuda_mag:post_detail' %}"><i class="fa fa-comments" aria-hidden="true"></i> 13</a></span>
-                                <span><a href="{% url 'enuda_mag:post_detail' %}"><i class="fa fa-bolt" aria-hidden="true"></i> 956</a></span>
+                                <span><a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i> Sep 4, 2017</a></span>
+                                <span><a href="#"><i class="fa fa-comments" aria-hidden="true"></i> 13</a></span>
+                                <span><a href="#"><i class="fa fa-bolt" aria-hidden="true"></i> 956</a></span>
                             </div>
                         </div>
                         <div class="cs-post-title">
-                            <h3><a href="{% url 'enuda_mag:post_detail' %}">Chelsea Recovers From £88M Rejection, Liverpool Rocked</a></h3>
+                            <h3><a href="#">Chelsea Recovers From £88M Rejection, Liverpool Rocked</a></h3>
                         </div>
                         <div class="cs-post-excerpt">
                             <p>Vestibulum bibendum arcu nec sagittis efficitur. Etiam eget lacus tincidunt, ultricies dui quis.</p>
                         </div>
                         <div class="cs-post-readmore">
-                            <a href="{% url 'enuda_mag:post_detail' %}"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
                         </div>
                     </div>
                 </div><!-- end .cs-post-item -->
                 <!-- Post item -->
                 <div class="cs-post-item last">
                     <div class="cs-post-thumb">
-                        <a href="{% url 'enuda_mag:post_detail' %}">
+                        <a href="#">
                             <img src="{% static 'enuda_mag/demo/blog/list-4.jpg' %}" alt="Divit">
                         </a>
                     </div>
@@ -466,26 +328,26 @@
                             </div>
                             <div class="cs-post-meta">                                
                                 <span><a href="page-author.html"><i class="fa fa-user" aria-hidden="true"></i> Smith R.</a></span>
-                                <span><a href="{% url 'enuda_mag:post_detail' %}"><i class="fa fa-clock-o" aria-hidden="true"></i> Sep 4, 2017</a></span>
-                                <span><a href="{% url 'enuda_mag:post_detail' %}"><i class="fa fa-comments" aria-hidden="true"></i> 13</a></span>
-                                <span><a href="{% url 'enuda_mag:post_detail' %}"><i class="fa fa-bolt" aria-hidden="true"></i> 956</a></span>
+                                <span><a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i> Sep 4, 2017</a></span>
+                                <span><a href="#"><i class="fa fa-comments" aria-hidden="true"></i> 13</a></span>
+                                <span><a href="#"><i class="fa fa-bolt" aria-hidden="true"></i> 956</a></span>
                             </div>
                         </div>
                         <div class="cs-post-title">
-                            <h3><a href="{% url 'enuda_mag:post_detail' %}">Can Koby Altman Make James and Cavaliers Smile Again?</a></h3>
+                            <h3><a href="#">Can Koby Altman Make James and Cavaliers Smile Again?</a></h3>
                         </div>
                         <div class="cs-post-excerpt">
                             <p>Vestibulum bibendum arcu nec sagittis efficitur. Etiam eget lacus tincidunt, ultricies dui quis.</p>
                         </div>
                         <div class="cs-post-readmore">
-                            <a href="{% url 'enuda_mag:post_detail' %}"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
                         </div>
                     </div>
                 </div><!-- end .cs-post-item -->
                 <!-- Post item -->
                 <div class="cs-post-item first">
                     <div class="cs-post-thumb">
-                        <a href="{% url 'enuda_mag:post_detail' %}">
+                        <a href="#">
                             <img src="{% static 'enuda_mag/demo/blog/list-6.jpg' %}" alt="Divit">
                         </a>
                     </div>
@@ -496,26 +358,26 @@
                             </div>
                             <div class="cs-post-meta">                                
                                 <span><a href="page-author.html"><i class="fa fa-user" aria-hidden="true"></i> James K.</a></span>
-                                <span><a href="{% url 'enuda_mag:post_detail' %}"><i class="fa fa-clock-o" aria-hidden="true"></i> Sep 4, 2017</a></span>
-                                <span><a href="{% url 'enuda_mag:post_detail' %}"><i class="fa fa-comments" aria-hidden="true"></i> 13</a></span>
-                                <span><a href="{% url 'enuda_mag:post_detail' %}"><i class="fa fa-bolt" aria-hidden="true"></i> 956</a></span>
+                                <span><a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i> Sep 4, 2017</a></span>
+                                <span><a href="#"><i class="fa fa-comments" aria-hidden="true"></i> 13</a></span>
+                                <span><a href="#"><i class="fa fa-bolt" aria-hidden="true"></i> 956</a></span>
                             </div>
                         </div>
                         <div class="cs-post-title">
-                            <h3><a href="{% url 'enuda_mag:post_detail' %}">Man Utd: Why Mourinho's Transfer Window May Be Over</a></h3>
+                            <h3><a href="#">Man Utd: Why Mourinho's Transfer Window May Be Over</a></h3>
                         </div>
                         <div class="cs-post-excerpt">
                             <p>Vestibulum bibendum arcu nec sagittis efficitur. Etiam eget lacus tincidunt, ultricies dui quis.</p>
                         </div>
                         <div class="cs-post-readmore">
-                            <a href="{% url 'enuda_mag:post_detail' %}"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
                         </div>
                     </div>
                 </div><!-- end .cs-post-item -->
                 <!-- Post item -->
                 <div class="cs-post-item last">
                     <div class="cs-post-thumb">
-                        <a href="{% url 'enuda_mag:post_detail' %}">
+                        <a href="#">
                             <img src="{% static 'enuda_mag/demo/blog/list-5.jpg' %}" alt="Divit">
                         </a>
                     </div>
@@ -526,26 +388,26 @@
                             </div>
                             <div class="cs-post-meta">                                
                                 <span><a href="page-author.html"><i class="fa fa-user" aria-hidden="true"></i> Smith R.</a></span>
-                                <span><a href="{% url 'enuda_mag:post_detail' %}"><i class="fa fa-clock-o" aria-hidden="true"></i> Sep 4, 2017</a></span>
-                                <span><a href="{% url 'enuda_mag:post_detail' %}"><i class="fa fa-comments" aria-hidden="true"></i> 13</a></span>
-                                <span><a href="{% url 'enuda_mag:post_detail' %}"><i class="fa fa-bolt" aria-hidden="true"></i> 956</a></span>
+                                <span><a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i> Sep 4, 2017</a></span>
+                                <span><a href="#"><i class="fa fa-comments" aria-hidden="true"></i> 13</a></span>
+                                <span><a href="#"><i class="fa fa-bolt" aria-hidden="true"></i> 956</a></span>
                             </div>
                         </div>
                         <div class="cs-post-title">
-                            <h3><a href="{% url 'enuda_mag:post_detail' %}">Is This How Salah Will Fit into Klopp's Liverpool Team?</a></h3>
+                            <h3><a href="#">Is This How Salah Will Fit into Klopp's Liverpool Team?</a></h3>
                         </div>
                         <div class="cs-post-excerpt">
                             <p>Vestibulum bibendum arcu nec sagittis efficitur. Etiam eget lacus tincidunt, ultricies dui quis.</p>
                         </div>
                         <div class="cs-post-readmore">
-                            <a href="{% url 'enuda_mag:post_detail' %}"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
                         </div>
                     </div>
                 </div><!-- end .cs-post-item -->
                 <!-- Post item -->
                 <div class="cs-post-item first">
                     <div class="cs-post-thumb">
-                        <a href="{% url 'enuda_mag:post_detail' %}">
+                        <a href="#">
                             <img src="{% static 'enuda_mag/demo/blog/list-8.jpg' %}" alt="Divit">
                         </a>
                     </div>
@@ -556,26 +418,26 @@
                             </div>
                             <div class="cs-post-meta">                                
                                 <span><a href="page-author.html"><i class="fa fa-user" aria-hidden="true"></i> James K.</a></span>
-                                <span><a href="{% url 'enuda_mag:post_detail' %}"><i class="fa fa-clock-o" aria-hidden="true"></i> Sep 4, 2017</a></span>
-                                <span><a href="{% url 'enuda_mag:post_detail' %}"><i class="fa fa-comments" aria-hidden="true"></i> 13</a></span>
-                                <span><a href="{% url 'enuda_mag:post_detail' %}"><i class="fa fa-bolt" aria-hidden="true"></i> 956</a></span>
+                                <span><a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i> Sep 4, 2017</a></span>
+                                <span><a href="#"><i class="fa fa-comments" aria-hidden="true"></i> 13</a></span>
+                                <span><a href="#"><i class="fa fa-bolt" aria-hidden="true"></i> 956</a></span>
                             </div>
                         </div>
                         <div class="cs-post-title">
-                            <h3><a href="{% url 'enuda_mag:post_detail' %}">Antonio Conte Close to Solving Chelsea's Striker Crisis</a></h3>
+                            <h3><a href="#">Antonio Conte Close to Solving Chelsea's Striker Crisis</a></h3>
                         </div>
                         <div class="cs-post-excerpt">
                             <p>Vestibulum bibendum arcu nec sagittis efficitur. Etiam eget lacus tincidunt, ultricies dui quis.</p>
                         </div>
                         <div class="cs-post-readmore">
-                            <a href="{% url 'enuda_mag:post_detail' %}"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
                         </div>
                     </div>
                 </div><!-- end .cs-post-item -->
                 <!-- Post item -->
                 <div class="cs-post-item last">
                     <div class="cs-post-thumb">
-                        <a href="{% url 'enuda_mag:post_detail' %}">
+                        <a href="#">
                             <img src="{% static 'enuda_mag/demo/blog/list-7.jpg' %}" alt="Divit">
                         </a>
                     </div>
@@ -586,19 +448,19 @@
                             </div>
                             <div class="cs-post-meta">                                
                                 <span><a href="page-author.html"><i class="fa fa-user" aria-hidden="true"></i> Smith R.</a></span>
-                                <span><a href="{% url 'enuda_mag:post_detail' %}"><i class="fa fa-clock-o" aria-hidden="true"></i> Sep 4, 2017</a></span>
-                                <span><a href="{% url 'enuda_mag:post_detail' %}"><i class="fa fa-comments" aria-hidden="true"></i> 13</a></span>
-                                <span><a href="{% url 'enuda_mag:post_detail' %}"><i class="fa fa-bolt" aria-hidden="true"></i> 956</a></span>
+                                <span><a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i> Sep 4, 2017</a></span>
+                                <span><a href="#"><i class="fa fa-comments" aria-hidden="true"></i> 13</a></span>
+                                <span><a href="#"><i class="fa fa-bolt" aria-hidden="true"></i> 956</a></span>
                             </div>
                         </div>
                         <div class="cs-post-title">
-                            <h3><a href="{% url 'enuda_mag:post_detail' %}">Shark Attacks 2017: Surfer Narrowly Avoids Great White</a></h3>
+                            <h3><a href="#">Shark Attacks 2017: Surfer Narrowly Avoids Great White</a></h3>
                         </div>
                         <div class="cs-post-excerpt">
                             <p>Vestibulum bibendum arcu nec sagittis efficitur. Etiam eget lacus tincidunt, ultricies dui quis.</p>
                         </div>
                         <div class="cs-post-readmore">
-                            <a href="{% url 'enuda_mag:post_detail' %}"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
                         </div>
                     </div>
                 </div><!-- end .cs-post-item -->
@@ -638,15 +500,15 @@
                     <li>
                         <div class="cs-post-item">
                             <div class="cs-post-thumb">
-                                <a href="{% url 'enuda_mag:post_detail' %}"><img src="{% static 'enuda_mag/demo/sidebar/list-1.jpg' %}" alt="Divit"></a>
+                                <a href="#"><img src="{% static 'enuda_mag/demo/sidebar/list-1.jpg' %}" alt="Divit"></a>
                             </div>
                             <div class="cs-post-details">
                                 <div class="cs-post-title">
-                                    <h3><a href="{% url 'enuda_mag:post_detail' %}">Starbucks's New Flavors Just As Bad As 'The Unicorn'</a></h3>
+                                    <h3><a href="#">Starbucks's New Flavors Just As Bad As 'The Unicorn'</a></h3>
                                 </div>
                                 <div class="cs-clearfix">
                                     <div class="cs-post-meta">
-                                        <span><a href="{% url 'enuda_mag:post_detail' %}"><i class="fa fa-comments" aria-hidden="true"></i> 13 Comments</a></span>
+                                        <span><a href="#"><i class="fa fa-comments" aria-hidden="true"></i> 13 Comments</a></span>
                                     </div>
                                 </div>
                             </div>
@@ -655,15 +517,15 @@
                     <li>
                         <div class="cs-post-item">
                             <div class="cs-post-thumb">
-                                <a href="{% url 'enuda_mag:post_detail' %}"><img src="{% static 'enuda_mag/demo/sidebar/list-2.jpg" alt="Divit"></a>
+                                <a href="#"><img src="{% static 'enuda_mag/demo/sidebar/list-2.jpg" alt="Divit"></a>
                             </div>
                             <div class="cs-post-details">
                                 <div class="cs-post-title">
-                                    <h3><a href="{% url 'enuda_mag:post_detail' %}">Transfer News: Chelsea and Liverpool Fear Losing Star</a></h3>
+                                    <h3><a href="#">Transfer News: Chelsea and Liverpool Fear Losing Star</a></h3>
                                 </div>
                                 <div class="cs-clearfix">
                                     <div class="cs-post-meta">
-                                        <span><a href="{% url 'enuda_mag:post_detail' %}"><i class="fa fa-comments" aria-hidden="true"></i> 98 Comments</a></span>
+                                        <span><a href="#"><i class="fa fa-comments" aria-hidden="true"></i> 98 Comments</a></span>
                                     </div>
                                 </div>
                             </div>
@@ -672,15 +534,15 @@
                     <li>
                         <div class="cs-post-item">
                             <div class="cs-post-thumb">
-                                <a href="{% url 'enuda_mag:post_detail' %}"><img src="{% static 'enuda_mag/demo/sidebar/list-3.jpg' %}" alt="Divit"></a>
+                                <a href="#"><img src="{% static 'enuda_mag/demo/sidebar/list-3.jpg' %}" alt="Divit"></a>
                             </div>
                             <div class="cs-post-details">
                                 <div class="cs-post-title">
-                                    <h3><a href="{% url 'enuda_mag:post_detail' %}">How Much Is Beyoncé Worth? Singer Wants to Buy NBA Team</a></h3>
+                                    <h3><a href="#">How Much Is Beyoncé Worth? Singer Wants to Buy NBA Team</a></h3>
                                 </div>
                                 <div class="cs-clearfix">
                                     <div class="cs-post-meta">
-                                        <span><a href="{% url 'enuda_mag:post_detail' %}"><i class="fa fa-comments" aria-hidden="true"></i> 13 Comments</a></span>
+                                        <span><a href="#"><i class="fa fa-comments" aria-hidden="true"></i> 13 Comments</a></span>
                                     </div>
                                 </div>
                             </div>
@@ -689,15 +551,15 @@
                     <li>
                         <div class="cs-post-item">
                             <div class="cs-post-thumb">
-                                <a href="{% url 'enuda_mag:post_detail' %}"><img src="{% static 'enuda_mag/demo/sidebar/list-4.jpg' %}" alt="Divit"></a>
+                                <a href="#"><img src="{% static 'enuda_mag/demo/sidebar/list-4.jpg' %}" alt="Divit"></a>
                             </div>
                             <div class="cs-post-details">
                                 <div class="cs-post-title">
-                                    <h3><a href="{% url 'enuda_mag:post_detail' %}">Arsenal Identify New Target After Missing Out on Lemar</a></h3>
+                                    <h3><a href="#">Arsenal Identify New Target After Missing Out on Lemar</a></h3>
                                 </div>
                                 <div class="cs-clearfix">
                                     <div class="cs-post-meta">
-                                        <span><a href="{% url 'enuda_mag:post_detail' %}"><i class="fa fa-comments" aria-hidden="true"></i> 158 Comments</a></span>
+                                        <span><a href="#"><i class="fa fa-comments" aria-hidden="true"></i> 158 Comments</a></span>
                                     </div>
                                 </div>
                             </div>

@@ -11,12 +11,38 @@ from django.db.models import (
     OneToOneField,
     ManyToManyField,
     FileField,
-    Model
+    Model,
+    SlugField
 )
-from imagekit.models import ProcessedImageField
+from imagekit.processors import ResizeToFill
+from imagekit.models import ProcessedImageField, ImageSpecField
 from imagekit.processors import Transpose
+from tinymce.models import HTMLField
+from django.template.defaultfilters import slugify
 
 
+def get_str(field):
+    if field:
+        return field
+    else:
+        return 'Created on {}.'.format(
+            self.get_date())
+
+
+def create_slug(self, slug_field, model):
+        max_length = self._meta.get_field('slug').max_length
+        slug = slugify(slug_field)[:max_length]
+        original = slug
+
+        for x in range(1, 1000):
+            if not model.objects.filter(slug=slug).exclude(id=self.id).exists():
+                break
+
+            # Truncate the original slug dynamically. Minus 1 for the hyphen.
+            new_max_length = max_length - len(str(x)) - 1
+            short_slug = original[:new_max_length]
+            slug = "{}-{}".format(short_slug, x)
+        return slug
 
 def get_image(self):
     if self.image:
@@ -46,6 +72,7 @@ class TimeStampBaseModel(Model):
     timestamp = DateTimeField(
         editable=False, auto_now_add=True, auto_now=False)
     updated = DateTimeField(auto_now=True, blank=True, null=True)
+    slug = SlugField(default='', null=True, blank=True)
 
     def get_date(self):
         date = self.timestamp.strftime("%A, %d. %B %Y %I:%M%p")
@@ -80,6 +107,7 @@ class NameTimeStampBaseModel(Model):
     timestamp = DateTimeField(
         editable=False, auto_now_add=True, auto_now=False)
     updated = DateTimeField(auto_now=True, blank=True, null=True)
+    slug = SlugField(default='', null=True, blank=True)
 
     def get_date(self):
         date = self.timestamp.strftime("%A, %d. %B %Y %I:%M%p")
@@ -111,6 +139,43 @@ class NameTimeStampBaseModel(Model):
         abstract = True
 
 
+class HTMLContentBaseModel(Model):
+
+    content = HTMLField(null=True, blank=True)
+    timestamp = DateTimeField(
+        editable=False, auto_now_add=True, auto_now=False)
+    updated = DateTimeField(auto_now=True, blank=True, null=True)
+    slug = SlugField(default='', null=True, blank=True)
+
+    def get_date(self):
+        date = self.timestamp.strftime("%A, %d. %B %Y %I:%M%p")
+        return date
+
+
+    def time_ago(self):
+        return naturaltime(self.timestamp)
+
+    def __str__(self, name=None):
+        """
+        If model has name set that as name.
+
+        If model has name or name set by subclass
+            Then return that name
+        Else return "Class_Name object #*number* cretaed on *date*"
+        """
+        if self.name:
+            name = self.name
+
+        if name:
+            return name
+        else:
+            return "{} object #{} created on {}".format(
+                self.__class__.__name__, self.id, self.timestamp
+            )
+
+    class Meta:
+        abstract = True
+
 class Image(NameTimeStampBaseModel):
     # user = OneToOneField(User, related_name="image", null=True, blank=True)
     # content_object = GenericForeignKey('content_type', 'object_id')
@@ -122,6 +187,14 @@ class Image(NameTimeStampBaseModel):
         blank=True,
         format='JPEG',
         options={'quality': 60})
+    mid_size = ImageSpecField(source='image',
+                                      processors=[ResizeToFill(750, 450)],
+                                      format='JPEG',
+                                      options={'quality': 60})
+    thumbnail = ImageSpecField(source='image',
+                                      processors=[ResizeToFill(80, 80)],
+                                      format='JPEG',
+                                      options={'quality': 60})
     my_namespace = CharField(
         default="", max_length=128, null=True, blank=True)
     

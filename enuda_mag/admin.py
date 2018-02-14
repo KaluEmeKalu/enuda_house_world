@@ -8,6 +8,17 @@ from mediumeditor.admin import MediumEditorAdmin
 #     mediumeditor_fields = ('my_text_field')
 
 
+@admin.register(models.Image)
+class ImageAdmin(admin.ModelAdmin):
+	list_display = ['name', 'image', 'mid_size', 'thumbnail', 'timestamp', 'updated']
+
+
+
+@admin.register(models.Comment)
+class CommentAdmin(admin.ModelAdmin):
+	list_display = ['user', 'content', 'timestamp', 'updated']
+
+
 # Register your models here.
 @admin.register(models.BlogPost)
 class BlogPostAdmin(admin.ModelAdmin):
