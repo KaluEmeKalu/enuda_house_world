@@ -4,28 +4,30 @@
     <!-- Swiper -->
     <div class="swiper-container gallery-top">
         <div class="swiper-wrapper">
+            {% for blog_post in blog_posts %}
             <!-- Post slide -->
             <div class="swiper-slide">
                 <!-- Post item -->
-                <div class="cs-post-item" style="background-image: url({% static 'enuda_mag/img/nigerianmalemodel.jpg' %});">
+                <div class="cs-post-item" style="background-image: url({{ blog_post.image.image.url }});">
                     <div class="cs-post-details">
                         <div class="cs-clearfix">
                             <div class="cs-post-categories">
                                 <h5><a href="blog-category-list.html">Travel</a></h5>
                             </div>
                             <div class="cs-post-meta"> 
-                                <span><a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i> Sep 4, 2017</a></span>
-                                <span><a href="#"><i class="fa fa-comments" aria-hidden="true"></i> 13 Comments</a></span>
+                                <span><a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i>{{blog_post.get_date}}</a></span>
+                                <span><a href="#"><i class="fa fa-comments" aria-hidden="true"></i> {{blog_post.comments.count}}</a></span>
                                 <span><a href="#"><i class="fa fa-bolt" aria-hidden="true"></i> 956 Views</a></span>
                             </div>
                         </div>
                         <div class="cs-post-title">
-                            <h3><a href="#">Kalu Kalu Speaks On How To Transform a Nation</a></h3>
+                            <h3><a href="#">{{blog_post.title}}</a></h3>
                         </div>
                     </div>
                 </div><!-- end .cs-post-item -->
             </div><!-- end .swiper-slide -->
             <!-- Post slide -->
+            {% endfor %}
             <div class="swiper-slide">
                 <!-- Post item -->
                 <div class="cs-post-item" style="background-image: url({% static 'enuda_mag/demo/divit-slider/2.jpg' %});">

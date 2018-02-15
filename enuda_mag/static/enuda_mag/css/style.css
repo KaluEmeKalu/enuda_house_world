@@ -77,6 +77,10 @@ I. Kalu Edited Code
     max-width: 40px;
 }
 
+.logo_two img {
+    margin-right: 40px;
+}
+
 /*------------------------------------------------------------------
     1. Body
 -------------------------------------------------------------------*/
@@ -3446,7 +3450,24 @@ div.product .product_meta .tagged_as {
         line-height: 22px;
     }
 }
+/* Kalu Edited */
+/* Make Header Logo Invisible For Bigger Screens*/
+@media screen and (min-width: 767px) {
+    #cs-main-header.cs-header-layout-1 #cs-header-components #cs-site-logo img,
+    #cs-main-header.cs-header-layout-2 #cs-header-components #cs-site-logo img {
+        display: none;
+    }
+
+}
+/* End Kalu Edited */
 @media screen and (max-width: 767px) {
+    /* Kalu Edited */
+    /* Make logo_two I added display none for small screens*/
+    .logo_two {
+        display: none;
+    }
+
+    /* End Kalu Edited */
     .cs-large-media .cs-post-details {
         max-width: none
     }
