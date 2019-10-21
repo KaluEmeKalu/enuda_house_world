@@ -10,7 +10,7 @@ django-tracking2==0.4.0
 django-widget-tweaks==1.4.1
 idna==2.6
 lxml==4.1.1
-nltk==3.2.4
+nltk==3.4.5
 numpy==1.13.3
 olefile==0.44
 pandas==0.21.1
