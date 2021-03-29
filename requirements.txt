@@ -16,7 +16,7 @@ olefile==0.44
 pandas==0.21.1
 pilkit==2.0
 Pillow==4.2.0
-Pygments==2.2.0
+Pygments==2.7.4
 python-dateutil==2.6.1
 pytz==2017.2
 requests==2.18.4
