@@ -9,7 +9,7 @@ django-tinymce==2.7.0
 django-tracking2==0.4.0
 django-widget-tweaks==1.4.1
 idna==2.6
-lxml==4.1.1
+lxml==4.6.5
 nltk==3.2.4
 numpy==1.13.3
 olefile==0.44
