@@ -11,7 +11,7 @@ django-widget-tweaks==1.4.1
 idna==2.6
 lxml==4.1.1
 nltk==3.2.4
-numpy==1.13.3
+numpy==1.22.0
 olefile==0.44
 pandas==0.21.1
 pilkit==2.0
